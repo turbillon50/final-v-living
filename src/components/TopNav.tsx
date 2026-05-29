@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Icon } from "./Icon";
+import { Logo } from "./Logo";
 import { ThemeToggle, LangToggle } from "./ThemeLangToggle";
 import { useT } from "@/lib/i18n";
 
@@ -11,21 +12,18 @@ export function TopNav() {
   const { t } = useT();
 
   const links = [
-    { href: "/", label: t("nav.explore") },
-    { href: "/fractions", label: t("nav.fractions") },
-    { href: "/stays", label: t("nav.stays") },
+    { href: "/", label: t("nav.home") },
+    { href: "/fractions", label: t("nav.developments") },
     { href: "/experiences", label: t("nav.experiences") },
-    { href: "/services", label: t("nav.services") },
+    { href: "/services", label: t("nav.included") },
   ];
 
   return (
     <header className="bg-background/80 backdrop-blur-xl border-b border-border sticky top-0 z-50 w-full">
       <div className="h-16 w-full max-w-7xl mx-auto flex justify-between items-center px-margin-mobile">
         <div className="flex items-center gap-4">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="font-display-md text-display-md tracking-tighter v-gradient-text leading-none">
-              V Living
-            </span>
+          <Link href="/" className="flex items-center gap-2" aria-label="V·Living">
+            <Logo imgClassName="h-9 w-auto" />
           </Link>
         </div>
         <nav className="hidden md:flex gap-8">

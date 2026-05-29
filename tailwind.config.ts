@@ -46,6 +46,10 @@ const config: Config = {
         "inverse-primary": "rgb(var(--accent-strong) / <alpha-value>)",
         accent: "rgb(var(--accent) / <alpha-value>)",
 
+        // gold / amber — trust & credibility accents
+        gold: "rgb(var(--gold) / <alpha-value>)",
+        "gold-strong": "rgb(var(--gold-strong) / <alpha-value>)",
+
         // text/ink that sits ON the accent fill
         "on-primary": "rgb(var(--accent-contrast) / <alpha-value>)",
         "on-primary-fixed": "rgb(var(--accent-contrast) / <alpha-value>)",
@@ -101,6 +105,7 @@ const config: Config = {
         "display-lg": ["var(--font-hanken)", "Hanken Grotesk", "sans-serif"],
         "headline-lg": ["var(--font-hanken)", "Hanken Grotesk", "sans-serif"],
         "body-lg": ["var(--font-inter)", "Inter", "sans-serif"],
+        display: ["var(--font-display)", "var(--font-hanken)", "Archivo", "sans-serif"],
       },
       fontSize: {
         "label-sm": ["12px", { lineHeight: "1.1", letterSpacing: "0.03em", fontWeight: "600" }],

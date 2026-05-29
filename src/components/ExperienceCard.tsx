@@ -4,6 +4,7 @@ import { Icon } from "./Icon";
 import { SmartImage } from "./SmartImage";
 import { formatMXN } from "@/lib/data";
 import { useT } from "@/lib/i18n";
+import { waLink } from "@/lib/site";
 import type { Experience } from "@/lib/types";
 
 export function ExperienceCard({ experience }: { experience: Experience }) {
@@ -48,9 +49,14 @@ export function ExperienceCard({ experience }: { experience: Experience }) {
               {formatMXN(experience.priceMXN)}
             </span>
           </div>
-          <button className="bg-accent text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md active:scale-95 transition-transform cyan-glow">
+          <a
+            href={waLink(`${t("wa.expPrefix")} ${experience.title}`)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-accent text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md active:scale-95 transition-transform cyan-glow"
+          >
             {t("exp.book")}
-          </button>
+          </a>
         </div>
       </div>
     </article>

@@ -6,7 +6,8 @@ import { SmartImage } from "@/components/SmartImage";
 import { properties, formatMXN } from "@/lib/data";
 import { useT } from "@/lib/i18n";
 
-const owned = properties.slice(0, 2);
+// Owner demo: only developments actually available (ATTIK).
+const owned = properties.filter((p) => p.status === "Disponible");
 
 export function PortfolioView() {
   const { t } = useT();
@@ -22,9 +23,9 @@ export function PortfolioView() {
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-gutter mb-stack-lg">
         <Metric label={t("portfolio.totalValue")} value={formatMXN(totalValue)} icon="account_balance" />
-        <Metric label={t("portfolio.fractions")} value={String(owned.length)} icon="villa" />
+        <Metric label={t("portfolio.fractions")} value={String(owned.length)} icon="apartment" />
         <Metric label={t("portfolio.avgYield")} value={`${avgYield.toFixed(1)}%`} icon="trending_up" accent />
-        <Metric label={t("portfolio.weeksYear")} value="11" icon="event_available" />
+        <Metric label={t("portfolio.weeksYear")} value="3" icon="event_available" />
       </div>
 
       <h3 className="font-headline-lg text-headline-lg text-ink mb-stack-md">{t("portfolio.myFractions")}</h3>

@@ -11,7 +11,7 @@ import { CountUp } from "@/components/CountUp";
 import { stays, payments, properties, formatMXN } from "@/lib/data";
 import { useT } from "@/lib/i18n";
 
-const owned = properties.slice(0, 2);
+const owned = properties.filter((p) => p.status === "Disponible");
 const portfolioSeries = [2_100_000, 2_240_000, 2_180_000, 2_420_000, 2_560_000, 2_710_000, 2_980_000];
 
 export function OwnerDashboardView() {

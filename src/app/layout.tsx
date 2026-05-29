@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Hanken_Grotesk, Inter } from "next/font/google";
+import { Archivo, Hanken_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
+import { SITE } from "@/lib/site";
 import { TopNav } from "@/components/TopNav";
 import { BottomNav } from "@/components/BottomNav";
 import { Footer } from "@/components/Footer";
@@ -21,43 +22,55 @@ const inter = Inter({
   display: "swap",
 });
 
+// Condensed display face for big editorial headlines (ATTIK, 14 fracciones…).
+const archivo = Archivo({
+  subsets: ["latin"],
+  weight: ["700", "800", "900"],
+  variable: "--font-display",
+  display: "swap",
+});
+
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://v-living.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(APP_URL),
   title: {
-    default: "V Living — Fractional Ownership • Stays • Experiences",
-    template: "%s · V Living",
+    default: "V·Living — Fractional Ownership",
+    template: "%s · V·Living",
   },
   description:
-    "V Living es la plataforma premium para propiedad fraccional, estancias, experiencias y servicios aprobados. Diseño obsidiana, lujo y precisión.",
-  applicationName: "V Living",
+    "V·Living — Fractional Ownership en la Riviera Maya. Compras tu fracción de un desarrollo boutique (14 fracciones · 3 semanas/año) y la disfrutas, la rentas o la revendes. Gestión de punta a punta con V·Billing, bajo Fideicomiso Bancario.",
+  applicationName: SITE.name,
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "V Living",
+    title: SITE.name,
   },
   keywords: [
-    "propiedad fraccional",
     "fractional ownership",
-    "estancias de lujo",
-    "experiencias premium",
-    "V Living",
+    "propiedad fraccional",
+    "Riviera Maya",
+    "Tulum",
+    "Cancún",
+    "Playa del Carmen",
+    "fideicomiso",
+    "V·Living",
+    "ATTIK",
   ],
   openGraph: {
-    title: "V Living — Fractional Ownership • Stays • Experiences",
+    title: "V·Living — Fractional Ownership",
     description:
-      "Plataforma premium para propiedad fraccional, estancias y experiencias de lujo.",
+      "Compras tu fracción. La disfrutas, la rentas o la revendes. Desarrollos boutique en la Riviera Maya, gestionados de punta a punta (V·Billing) bajo Fideicomiso Bancario.",
     url: APP_URL,
-    siteName: "V Living",
+    siteName: SITE.name,
     locale: "es_MX",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "V Living",
-    description: "Fractional Ownership • Stays • Experiences",
+    title: "V·Living — Fractional Ownership",
+    description: "Tu fracción en la Riviera Maya. Gestión de punta a punta. V·Billing.",
   },
   icons: {
     icon: "/icon.svg",
@@ -81,7 +94,7 @@ export default function RootLayout({
     <html
       lang="es"
       suppressHydrationWarning
-      className={`${hanken.variable} ${inter.variable}`}
+      className={`${hanken.variable} ${inter.variable} ${archivo.variable}`}
     >
       <head>
         <link

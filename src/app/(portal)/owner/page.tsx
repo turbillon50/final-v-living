@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { OwnerDashboardView } from "@/components/pages/OwnerDashboardView";
 
 export const metadata: Metadata = {
-  title: "Owner Portal",
-  description: "Gestiona tu portafolio fraccional y tus próximas experiencias de lujo.",
+  title: "Portal del Propietario",
+  description: "Gestiona tu fracción, tus 3 semanas y tu operación V·Billing.",
 };
 
 export default function OwnerDashboard() {
