@@ -1,0 +1,21 @@
+{
+  "name": "V Living — Fractional Ownership • Stays • Experiences",
+  "short_name": "V Living",
+  "description": "Plataforma premium para propiedad fraccional, estancias, experiencias y servicios.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "lang": "es-MX",
+  "categories": ["lifestyle", "travel", "finance"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
