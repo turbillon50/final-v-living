@@ -45,7 +45,7 @@ export const properties: Property[] = [
       render("attik", "03"),
       render("attik", "04"),
     ],
-    priceFromMXN: 2_450_000,
+    priceFromMXN: 650_000,
     description:
       "ATTIK es nuestro proyecto insignia: un edificio boutique de autor en el corazón de Tulum, Quintana Roo. Se vende en 14 fracciones; cada fracción te da 3 semanas al año (1 premium, 1 intermedia y 1 flexible). Compras tu fracción y la disfrutas, la rentas o la revendes — nosotros la operamos por ti, llave en mano, bajo Fideicomiso Bancario. Entrega Agosto 2026.",
     amenities: [
@@ -58,7 +58,7 @@ export const properties: Property[] = [
     ],
     featured: true,
     // legacy-compatible aliases
-    priceMXN: 2_450_000,
+    priceMXN: 650_000,
     fraction: "1 / 14",
     weeksPerYear: 3,
     yieldPct: 9.4,
@@ -270,7 +270,7 @@ export const stays: Stay[] = [
 ];
 
 export const payments: Payment[] = [
-  { id: "p1", concept: "Adquisición fracción 1/14 — ATTIK, Tulum", date: "12 Mar 2026", amountMXN: 2450000, method: "Transferencia", status: "Pagado" },
+  { id: "p1", concept: "Adquisición fracción 1/14 — ATTIK, Tulum", date: "12 Mar 2026", amountMXN: 650000, method: "Transferencia", status: "Pagado" },
   { id: "p2", concept: "Cuota V·Billing anual 2026", date: "01 Ene 2026", amountMXN: 48000, method: "Mercado Pago", status: "Pagado" },
   { id: "p3", concept: "Experiencia — Yate privado", date: "18 May 2026", amountMXN: 18000, method: "Stripe", status: "Procesando" },
   { id: "p4", concept: "Cuota de operación Q3 2026", date: "01 Jul 2026", amountMXN: 12000, method: "Mercado Pago", status: "Pendiente" },
