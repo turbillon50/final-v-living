@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>V Living | Premium Fractional Ownership</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e5e2e1",
+                        "on-primary-fixed": "#002020",
+                        "surface-variant": "#353534",
+                        "surface-bright": "#3a3939",
+                        "surface": "#131313",
+                        "inverse-on-surface": "#313030",
+                        "error": "#ffb4ab",
+                        "secondary": "#c6c6c6",
+                        "surface-dim": "#131313",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "outline-variant": "#3a4a49",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "primary-container": "#00fbfb",
+                        "background": "#131313",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#e5e2e1",
+                        "outline": "#839493",
+                        "primary-fixed": "#00fbfb",
+                        "on-primary-container": "#007070",
+                        "secondary-container": "#454747",
+                        "on-secondary": "#2f3131",
+                        "tertiary": "#ffffff",
+                        "surface-container-low": "#1c1b1b",
+                        "inverse-primary": "#006a6a",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "surface-tint": "#00dddd",
+                        "tertiary-container": "#e5e2e1",
+                        "surface-container": "#201f1f",
+                        "on-tertiary-container": "#656464",
+                        "on-tertiary": "#313030",
+                        "on-primary": "#003737",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-container": "#b5b5b5",
+                        "primary-fixed-dim": "#00dddd",
+                        "primary": "#ffffff",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-primary-fixed-variant": "#004f4f",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-surface-variant": "#b9cac9",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-background": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#353534",
+                        "surface-container-high": "#2a2a2a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "stack-lg": "32px",
+                        "stack-xl": "64px",
+                        "stack-md": "16px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "display-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1.1", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["20px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass {
+            background: rgba(18, 18, 18, 0.6);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .obsidian-card {
+            background: #121212;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        .obsidian-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.03) 45%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.03) 55%, transparent 100%);
+            transition: transform 0.8s ease;
+        }
+        .obsidian-card:hover::after {
+            transform: translateX(50%);
+        }
+        .cyan-glow {
+            box-shadow: 0 0 20px rgba(0, 251, 251, 0.15);
+        }
+        .cyan-text-glow {
+            text-shadow: 0 0 12px rgba(0, 251, 251, 0.4);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3a3939;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="bg-background/80 dark:bg-background/80 backdrop-blur-xl border-b border-white/10 docked full-width top-0 sticky z-50 flat no shadows h-16 w-full flex justify-between items-center px-margin-mobile max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary scale-95 transition-transform duration-200 active:scale-90 cursor-pointer">menu</span>
+<h1 class="font-display-md text-display-md tracking-tighter text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-container">V Living</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-8">
+<a class="text-primary-fixed font-label-md transition-opacity hover:opacity-80" href="#">Explorar</a>
+<a class="text-secondary font-label-md transition-opacity hover:opacity-80" href="#">Fracciones</a>
+<a class="text-secondary font-label-md transition-opacity hover:opacity-80" href="#">Servicios</a>
+</div>
+<span class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity scale-95 transition-transform duration-200 active:scale-90 cursor-pointer">notifications</span>
+</div>
+</header>
+<main class="max-w-7xl mx-auto pb-32">
+<!-- Hero Section -->
+<section class="relative h-[751px] md:h-[618px] w-full flex flex-col justify-center px-margin-mobile overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A breathtaking, cinematic shot of a modern, multi-million dollar glass villa perched on a cliffside overlooking the azure Caribbean Sea at twilight. The architectural masterpiece features sleek horizontal lines, warm interior lighting contrasting with the deep blue dusk, and a massive infinity pool reflecting the starry sky. The entire scene exudaes an aura of extreme luxury, serenity, and exclusive lifestyle ownership with high-end aesthetic precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDloSx_GkIoWKFYZAm2J7iILQxy_-cMjDQgG82PNaZbChTpR_QOw53ulzVCwZ09JHg9eP3AlaOjGOnEPxkyQAQPN8K1kKII9JDx6Y16zVkcVjv7YCV9kF2iF71FLPfgeEtY5nwG-vjRCGUzPPcAXDzTxZcvuuG2WU_zHQOijNA8_97SEh-AVpyGaWmYghjIBfY1yyAABYoJjXERMgt3iowmDnxaCFerNmIHUuMDjhR7Ot8KBMQVN22u54TAmAa2stwnA2xjk5DmCmM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent"></div>
+</div>
+<div class="relative z-10 space-y-stack-md max-w-2xl">
+<p class="text-primary-fixed uppercase tracking-widest font-label-sm">Bienvenido, Alexander</p>
+<h2 class="font-display-lg text-display-lg leading-tight text-white">¿Qué quieres vivir hoy?</h2>
+<!-- Floating Search Bar -->
+<div class="glass mt-stack-lg p-2 rounded-full flex items-center shadow-2xl w-full max-w-xl group focus-within:border-primary-fixed/40 transition-all duration-300">
+<span class="material-symbols-outlined ml-4 text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-white placeholder-outline w-full font-body-md" placeholder="Buscar destinos, propiedades o experiencias" type="text"/>
+<button class="bg-primary-fixed text-on-primary-fixed px-6 py-2 rounded-full font-label-md hover:scale-105 transition-transform">
+                        Explorar
+                    </button>
+</div>
+</div>
+</section>
+<!-- Quick Access Bento Grid -->
+<section class="px-margin-mobile -mt-32 relative z-20 grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<div class="obsidian-card p-stack-md rounded-xl group cursor-pointer h-48 flex flex-col justify-between">
+<div class="absolute inset-0 opacity-40 group-hover:opacity-60 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Close up of a luxury modern villa exterior with geometric concrete lines and floor-to-ceiling glass windows at sunset. The lighting is soft and golden, highlighting the premium architectural details and the sophisticated obsidian and teal color palette of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtmM19nzUtXF2RsoMsK91Sp5KMRAGbH6sFC9TETFhXMCd_WPO1juSyBpofBPn116xt5I0MyKwdj8HV0mT4DlrWJm_QT6xqDCrnSWVJmbZvhVyCHkQvK1nPOcIxUeARaoZgOixalp7GItWvPcB0DmNaUYTh8XzA4vR0GhOElwarqPRqPE454QVA0mHXor-FqDfGyZOYFPbfKZFWzh6g-Pr5SOG5Eol_3AKDPuornmDwBtoTopCcAaZRg8SbCboAyKDNsFoUM5uBM98"/>
+</div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<span class="material-symbols-outlined text-primary-fixed bg-surface-container-highest/60 p-2 rounded-lg self-start">account_balance_wallet</span>
+<div>
+<p class="text-secondary text-label-sm uppercase tracking-tighter">Explorar</p>
+<h3 class="text-white font-headline-lg">Fracciones</h3>
+</div>
+</div>
+</div>
+<div class="obsidian-card p-stack-md rounded-xl group cursor-pointer h-48 flex flex-col justify-between">
+<div class="absolute inset-0 opacity-40 group-hover:opacity-60 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="A luxury hotel infinity pool overlooking the ocean in Tulum, with minimalist white loungers and palm trees. The mood is tranquil and elite, with a polished, glassmorphic visual style that emphasizes premium travel and high-end stays." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYlyvov5eB8vblSVsfKIuTCKKOIT1a-aarFzcLRI1Q5A8BY_KrOEOGxTvgLlo-UvDphIyEc2lEo3WweiTRfjN3oXq-AC7TtmL9h_14J0Yjh4LR5Ns_oRt9JBJYfX4QWThGaO_KC9boxOfoqVsMKjzTYyA0McZwD7lNPmSAkYhwqyQD3e6axyvX24sH4W0daTWLrmPaRv0IW1HPbiobiPon5diRpQDDUKvcn_afehxnr6RDnpKzvMRPnHbYPIAexQQ7LYDkg62dW0M"/>
+</div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<span class="material-symbols-outlined text-primary-fixed bg-surface-container-highest/60 p-2 rounded-lg self-start">calendar_today</span>
+<div>
+<p class="text-secondary text-label-sm uppercase tracking-tighter">Reservar</p>
+<h3 class="text-white font-headline-lg">Estancias</h3>
+</div>
+</div>
+</div>
+<div class="obsidian-card p-stack-md rounded-xl group cursor-pointer h-48 flex flex-col justify-between">
+<div class="absolute inset-0 opacity-40 group-hover:opacity-60 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="A cinematic underwater shot of a diver exploring a crystal clear cave cenote in Mexico. The light beams penetrate the water with a brilliant cyan glow, creating a mysterious and exclusive adventure atmosphere that fits the luxury experiences brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2udRyBtFQCFcCn5b7QFNyM-5b88bGi6EV-HwFbhW5H5jSfLNIznStGALJOyPsLz9LTIo4XQw6lBqEcIr9P7jCX0KpaRt0RYLTGLYTk1FLAxc3OA1vEvD7cVMhg-I7biN4jQr8cgRErboYK3rFTxm3RGaDDgZPsAszWDclMjtJI36r2yocFiN10RSVzQPyByzuSByNSHUYh7FPw-aPs7SN8KpW7uyEhrXQLSIqEbCI7ts3jI8I9BJrUowRn5WR2s2Iv1d97Dkb_to"/>
+</div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<span class="material-symbols-outlined text-primary-fixed bg-surface-container-highest/60 p-2 rounded-lg self-start">sailing</span>
+<div>
+<p class="text-secondary text-label-sm uppercase tracking-tighter">Vivir</p>
+<h3 class="text-white font-headline-lg">Experiencias</h3>
+</div>
+</div>
+</div>
+<div class="obsidian-card p-stack-md rounded-xl group cursor-pointer h-48 flex flex-col justify-between">
+<div class="absolute inset-0 opacity-40 group-hover:opacity-60 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="A detail shot of a professional concierge pouring champagne into a crystal flute in a high-end private lounge. The focus is sharp on the liquid gold and the chrome accents, representing elite services and premium lifestyle management in a dark-mode environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ5gatYKc-Y-MUZsyBnVZgc-WdNW0LPFQgvRqcpLKhuT71U7uCMa9zhBexYhVe0xBk8hDuST6BuNdDN75U1kRYbj0SOjq7ZauHODB4HwCPfSAw39ERfx0emRY0dTfIdyLt2FsLY_nfajyx5iEH-Hia1CVgvMOKlWMrRgeLf8jHriO9OjtUsRReIJDi0ilmnbfzkMSFObbiovU1-lYEAHgSWIC9zj8jfeLNjQD6SUNcnR9PLYCIQ5lMN958UiFivzXlH3f5cYfh-Is"/>
+</div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<span class="material-symbols-outlined text-primary-fixed bg-surface-container-highest/60 p-2 rounded-lg self-start">concierge</span>
+<div>
+<p class="text-secondary text-label-sm uppercase tracking-tighter">Servicios</p>
+<h3 class="text-white font-headline-lg">Premium</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Popular Destinations -->
+<section class="mt-stack-xl px-margin-mobile">
+<div class="flex justify-between items-end mb-stack-lg">
+<div>
+<h3 class="text-white font-display-md text-display-md">Destinos populares</h3>
+<p class="text-secondary font-body-md">Explora las ubicaciones más exclusivas del mundo.</p>
+</div>
+<button class="text-primary-fixed font-label-md flex items-center gap-1 hover:gap-2 transition-all">
+                    Ver todos <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<div class="flex gap-gutter overflow-x-auto pb-4 scrollbar-hide snap-x">
+<!-- Destination Card -->
+<div class="min-w-[160px] md:min-w-[240px] snap-start group cursor-pointer">
+<div class="aspect-[3/4] rounded-2xl overflow-hidden obsidian-card relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A stunning drone view of Cancún's turquoise coastline with white sand beaches and luxury high-rise resorts. The image is color-graded for a high-end, cinematic dark-mode look, with saturated cyans and deep shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCohpaISaQNBh8MV_0l7G_kL7UpFresDaEs9cOmIlDJpjC6P02feO8moJuXGn1mavxFkSEWMoZsUL4G0PqtKJ7Vz03OMfZ5K2IFHY0YqWv_Ik8fQhnz_oVEH8Wuhux3ai2j68gE_8mDAJ6aRfEzakBAQYeAXnnzwfSsVcmZTYGfCi6Cap1hevekVPMP-1qhnvb9wldUNK1ITWcsZS3dTQU6-ICIqD-vIMjqt5jLVSF8kJEQFtPfMq__adhmydykeeeGJvqaIDtY62U"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<h4 class="text-white font-headline-lg">Cancún</h4>
+<p class="text-secondary-fixed-dim text-label-sm">4 Propiedades</p>
+</div>
+</div>
+</div>
+<div class="min-w-[160px] md:min-w-[240px] snap-start group cursor-pointer">
+<div class="aspect-[3/4] rounded-2xl overflow-hidden obsidian-card relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="The famous El Arco rock formation in Los Cabos at sunrise. The golden light hits the cliffs while the ocean remains a deep, mysterious blue. High-end travel aesthetic focusing on natural wonder and exclusivity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzX3VXhc-Pz3yBqPu6lL5oQy3bzzq6OoV4dZKea-LSE2vxZIrdn6WohuAQLiGZM3xJ3VlEn6i4koMfwi3nibBe_d6UVqCTl01dc38pqCfTy2aPi7RKeOJ8RolFQ5xICo2i4-0Sh-zKBfYRJ0RauzFv6l31lB1KMZQ4ro7KLHr9luJ3cpJjW_FziX8BMB4Es98f8nhkFMiPKnP99o3VPmSc9AvloTAglojaItg37_jrfzxZZpOtHBlW9AkXs2RcLadqHvQlPXRYmNg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<h4 class="text-white font-headline-lg">Los Cabos</h4>
+<p class="text-secondary-fixed-dim text-label-sm">7 Propiedades</p>
+</div>
+</div>
+</div>
+<div class="min-w-[160px] md:min-w-[240px] snap-start group cursor-pointer">
+<div class="aspect-[3/4] rounded-2xl overflow-hidden obsidian-card relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A private beach club in Tulum featuring thatched roofs, tropical palms, and crystal water. The lighting is moody and sophisticated, capturing the bohemian luxury vibe of the region in a high-contrast style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz9Qfy_LuURhxoYFivwpY34qqdXFQbbWkfN2sTGcyxq695jHmiAgfeo7p0JWdob1t_S9TbCmwsdCNLHOVOhyM-hQBBYjwEmPy6d1INbpRAw6l6lLwFe1psoXghmlHInYom1POXzuXRKXH2105NwXkXvqV36_bMZMqotpSX9legHhXttZ1HAr7_okl98-06gMWWaonEICYrCVTK_0eIaW8Om3IMRjMoivWzesUhVyD_PuFI-lnKDpvNJBXFcjIef4NJrgWQnho0LM8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<h4 class="text-white font-headline-lg">Tulum</h4>
+<p class="text-secondary-fixed-dim text-label-sm">12 Propiedades</p>
+</div>
+</div>
+</div>
+<div class="min-w-[160px] md:min-w-[240px] snap-start group cursor-pointer">
+<div class="aspect-[3/4] rounded-2xl overflow-hidden obsidian-card relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A modern architectural hotel on the Riviera Maya, surrounded by lush jungle and cenote-inspired pools. The image is dark and lush, with glowing interior lights that invite the viewer into an exclusive paradise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMnRuiDwFi_OIC732u2NIqih4AxvwW2u6X68xoKof5FCtMkGFjIEh-qmU2SqIYmQTon7V1x7Ipix29VwP7eDsRaa0gNNM0aETSiUXvrQuwzrzLKrx-X4J6_dy2ak-P-HnXUpMPPrxVJuf26-6m6piKGSI6r3ZzicAbn6gu73rXgmQNv-j7piXDBI2AhA0gFsuVUqgeATkUDMs_4zwEqw-72XX0Z2kpmcsh4hSwyXC4MDkAIFdUhL2rjJDAp0RTh1ro2LoTAiNcH-c"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<h4 class="text-white font-headline-lg">Riviera Maya</h4>
+<p class="text-secondary-fixed-dim text-label-sm">8 Propiedades</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Promotional Banner -->
+<section class="mt-stack-xl px-margin-mobile">
+<div class="obsidian-card rounded-3xl overflow-hidden flex flex-col md:flex-row h-auto md:h-64">
+<div class="flex-1 p-stack-lg flex flex-col justify-center gap-4">
+<h3 class="text-white font-display-md text-display-md">Tu próxima experiencia te espera</h3>
+<p class="text-secondary font-body-md max-w-lg">Descubre propiedades únicas con beneficios exclusivos para miembros de V Living.</p>
+<button class="bg-white text-black px-8 py-3 rounded-full font-label-md w-fit hover:bg-primary-fixed transition-colors">
+                        Explorar ahora
+                    </button>
+</div>
+<div class="flex-1 relative min-h-[200px]">
+<img class="w-full h-full object-cover" data-alt="A wide, panoramic shot of a sleek contemporary villa with an expansive terrace and outdoor lounge. The lighting is dusk-focused with warm pools of light emerging from the interiors against a dark navy sky, perfectly showcasing the fractional ownership lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCta7-cg1Jk7y_uHLVOKZYYqflQQV_QZgSjwL6PnlwC6NDfbZZ7xBcKfYLPBTQgkse9Iz_m66ShOjJsZwIzOsWpxqln8OpTRVMz4_IFj_2jCmIBv3DVWuPIKKgkybJvSJV2jqrqaJQen3W-MNfjBnOr4WKkautKbCirzVlsEaVwUd1qowTpehusk5FkZvevN9YqUVD3Q9_ey0uYCvR_9b4jwkFjKkK9yuLgPKRwiTRif9dIOVaeQpoTgafgs9KQ5I6Elmc5oSodb3I"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 h-20 rounded-t-xl glass border-t border-white/5 shadow-[0_-4px_24px_rgba(0,255,255,0.05)] flex justify-around items-center px-4 pb-safe">
+<div class="flex items-center justify-center text-primary-fixed drop-shadow-[0_0_8px_rgba(0,251,251,0.5)] bg-surface-variant/40 rounded-full p-3 transition-transform duration-300 scale-110">
+<span class="material-symbols-outlined active-icon">home</span>
+</div>
+<div class="flex items-center justify-center text-secondary-fixed-dim p-3 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</div>
+<!-- Center Floating V -->
+<div class="flex items-center justify-center -mt-10">
+<div class="w-14 h-14 bg-primary-fixed rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(0,251,251,0.6)] border-4 border-black active:scale-90 transition-transform">
+<span class="font-black text-black text-2xl">V</span>
+</div>
+</div>
+<div class="flex items-center justify-center text-secondary-fixed-dim p-3 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">travel_explore</span>
+</div>
+<div class="flex items-center justify-center text-secondary-fixed-dim p-3 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">person</span>
+</div>
+</nav>
+<script>
+        // Simple micro-interaction for the search bar
+        const searchInput = document.querySelector('input');
+        const searchBar = searchInput.parentElement;
+
+        searchInput.addEventListener('focus', () => {
+            searchBar.classList.add('cyan-glow');
+        });
+
+        searchInput.addEventListener('blur', () => {
+            searchBar.classList.remove('cyan-glow');
+        });
+
+        // Horizontal scroll momentum and fade logic can be added here if needed
+    </script>
+</body></html>

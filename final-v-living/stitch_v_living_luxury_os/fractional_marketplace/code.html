@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>V Living | Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        :root {
+            --glass-bg: rgba(18, 18, 18, 0.7);
+            --obsidian: #050505;
+            --cyan-glow: 0 0 15px rgba(0, 255, 255, 0.15);
+        }
+        body {
+            background-color: var(--obsidian);
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(18, 18, 18, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(0, 251, 251, 0.3);
+            box-shadow: var(--cyan-glow);
+        }
+        .chrome-border {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .cyan-accent {
+            color: #00fbfb;
+            text-shadow: 0 0 10px rgba(0, 251, 251, 0.3);
+        }
+        .diagonal-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .diagonal-shine::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 45%, rgba(255,255,255,0.05) 50%, transparent 55%);
+            pointer-events: none;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#e5e2e1",
+                      "on-primary-fixed": "#002020",
+                      "surface-variant": "#353534",
+                      "surface-bright": "#3a3939",
+                      "surface": "#131313",
+                      "inverse-on-surface": "#313030",
+                      "error": "#ffb4ab",
+                      "secondary": "#c6c6c6",
+                      "surface-dim": "#131313",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "outline-variant": "#3a4a49",
+                      "on-tertiary-fixed-variant": "#474646",
+                      "primary-container": "#00fbfb",
+                      "background": "#131313",
+                      "secondary-fixed": "#e2e2e2",
+                      "on-error": "#690005",
+                      "tertiary-fixed": "#e5e2e1",
+                      "outline": "#839493",
+                      "primary-fixed": "#00fbfb",
+                      "on-primary-container": "#007070",
+                      "secondary-container": "#454747",
+                      "on-secondary": "#2f3131",
+                      "tertiary": "#ffffff",
+                      "surface-container-low": "#1c1b1b",
+                      "inverse-primary": "#006a6a",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "secondary-fixed-dim": "#c6c6c6",
+                      "surface-tint": "#00dddd",
+                      "tertiary-container": "#e5e2e1",
+                      "surface-container": "#201f1f",
+                      "on-tertiary-container": "#656464",
+                      "on-tertiary": "#313030",
+                      "on-primary": "#003737",
+                      "inverse-surface": "#e5e2e1",
+                      "on-secondary-container": "#b5b5b5",
+                      "primary-fixed-dim": "#00dddd",
+                      "primary": "#ffffff",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "on-primary-fixed-variant": "#004f4f",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-surface-variant": "#b9cac9",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary-fixed-variant": "#454747",
+                      "on-background": "#e5e2e1",
+                      "error-container": "#93000a",
+                      "surface-container-highest": "#353534",
+                      "surface-container-high": "#2a2a2a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-sm": "8px",
+                      "stack-lg": "32px",
+                      "stack-xl": "64px",
+                      "stack-md": "16px",
+                      "margin-desktop": "40px",
+                      "margin-mobile": "20px",
+                      "gutter": "16px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "label-sm": ["Inter"],
+                      "body-md": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-lg-mobile": ["Hanken Grotesk"],
+                      "display-md": ["Hanken Grotesk"],
+                      "display-lg": ["Hanken Grotesk"],
+                      "headline-lg": ["Hanken Grotesk"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "label-sm": ["12px", {"lineHeight": "1.1", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["20px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "display-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- Top Navigation Shell -->
+<header class="docked full-width top-0 sticky z-50 bg-background/80 dark:bg-background/80 backdrop-blur-xl border-b border-white/10 flex justify-between items-center px-margin-mobile h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity cursor-pointer">menu</span>
+<span class="font-display-md text-display-md tracking-tighter text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-container">V Living</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity cursor-pointer">notifications</span>
+</div>
+</header>
+<main class="min-h-screen max-w-7xl mx-auto pb-32">
+<!-- Header & Search -->
+<section class="px-margin-mobile pt-stack-md pb-stack-lg">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile mb-4">Marketplace de fracciones</h1>
+<div class="relative group">
+<input class="w-full bg-surface-container-high border-white/10 rounded-xl py-4 pl-12 pr-4 text-body-md focus:border-primary-fixed focus:ring-1 focus:ring-primary-fixed transition-all placeholder:text-secondary-fixed-dim" placeholder="Buscar fracciones..." type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-secondary">search</span>
+</div>
+</section>
+<!-- Filters -->
+<section class="px-margin-mobile mb-stack-lg overflow-x-auto hide-scrollbar flex gap-3 whitespace-nowrap">
+<button class="px-6 py-2 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md">Todos</button>
+<button class="px-6 py-2 rounded-full border border-white/10 text-secondary hover:border-primary-fixed transition-colors font-label-md text-label-md">Playa</button>
+<button class="px-6 py-2 rounded-full border border-white/10 text-secondary hover:border-primary-fixed transition-colors font-label-md text-label-md">Montaña</button>
+<button class="px-6 py-2 rounded-full border border-white/10 text-secondary hover:border-primary-fixed transition-colors font-label-md text-label-md">Ciudad</button>
+<button class="px-6 py-2 rounded-full border border-white/10 text-secondary hover:border-primary-fixed transition-colors font-label-md text-label-md">Wellness</button>
+</section>
+<!-- Listings Grid -->
+<section class="px-margin-mobile grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stack-md">
+<!-- Featured Property Card -->
+<div class="glass-card rounded-2xl overflow-hidden group cursor-pointer lg:col-span-2">
+<div class="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A luxurious seaside villa in Los Cabos with a stunning infinity pool overlooking the turquoise Pacific Ocean during golden hour. The architecture is modern and minimalist with clean white lines and floor-to-ceiling glass walls reflecting the orange and cyan sunset sky. The atmosphere is exclusive, serene, and sophisticated, embodying the high-end luxury lifestyle of the V Living brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmRKeXpfZOZuzqSIns_YpFnzeOa1wwVOuK2rlbrz6tWXBWIX0cUW1MmbeJ0gnBTfeke1dSrDI4TnDQbpnmXEDwBisiiQ9-hmI-41EpG0ovbNNLdNimoXuiBQkNxAG1c5867xJsjrFPSpEckTw5ZkzPCBL92d5fbD0CptdZdhtUzgws-7FAQtbw_c-qDDJTpc3olso9m78YO4XuG1xMVV_GyjDB-Us6Y-UtRk8MgoEw14Wjv2J0aBvj5cYVxNLUPlZyO3rg_MirhIw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 bg-primary-fixed/20 backdrop-blur-md border border-primary-fixed/30 px-3 py-1 rounded-md">
+<span class="text-[10px] font-bold tracking-widest uppercase text-primary-fixed">Destacado</span>
+</div>
+<div class="absolute top-4 right-4 bg-black/40 backdrop-blur-md rounded-full p-2">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</div>
+</div>
+<div class="p-stack-md">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-white">Casa del Mar</h2>
+<p class="text-secondary text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                Los Cabos, Baja California Sur
+                            </p>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-secondary-fixed-dim uppercase tracking-wider">Desde</p>
+<p class="text-primary-fixed font-headline-lg text-headline-lg">$1,250,000 MXN</p>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 py-4 border-y border-white/5 my-4">
+<div class="text-center border-r border-white/5">
+<p class="text-secondary text-[10px] uppercase">Fracción</p>
+<p class="font-bold text-white">1/8 Disp.</p>
+</div>
+<div class="text-center border-r border-white/5">
+<p class="text-secondary text-[10px] uppercase">Estancias</p>
+<p class="font-bold text-white">6 sem/año</p>
+</div>
+<div class="text-center">
+<p class="text-secondary text-[10px] uppercase">Rendimiento</p>
+<p class="font-bold cyan-accent">8.6%</p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 bg-white text-black py-3 rounded-xl font-label-md text-label-md active:scale-95 transition-transform">Ver Fracciones</button>
+<button class="flex-1 border border-primary-fixed text-primary-fixed py-3 rounded-xl font-label-md text-label-md hover:bg-primary-fixed/5 transition-colors">Adquirir Fracción</button>
+</div>
+</div>
+</div>
+<!-- Property Card 2 -->
+<div class="glass-card rounded-2xl overflow-hidden group cursor-pointer">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A secluded beachfront property in Tulum with traditional Mayan-inspired architecture blended with contemporary obsidian finishes. The scene is illuminated by soft moonlight reflecting off the Caribbean sea, creating a deep blue and emerald palette. Palm trees sway gently in the breeze, framing the private terrace. The mood is intimate and mystical, capturing the essence of elite wellness and privacy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLOv8LZpudlvxk2mo3-N6gohPKEh2aiTlnyI7zWYzaEyJAs1CD-d8UQnjF-F3uHswPIHZQl5LGZS27SlAjrBK-TL69Ga_LK2diGyk73YAHEGJfQCTZaCgrr2E1ZbR_wcTvEimFESL2zWvrUOf6l6PIsnnSBsdAqn92mOUIqIsQ1uyIZbBnOIg97UHdkCNVFdwzmMutK4mL3aoel9XqS82LidXsRcOXRmwSzc-KVUqXzZz-doJdXsTbnMzCH-WHhf65kyarF8huJnA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute top-4 right-4 bg-black/40 backdrop-blur-md rounded-full p-2">
+<span class="material-symbols-outlined text-white">favorite</span>
+</div>
+</div>
+<div class="p-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-white">Villa Paraíso</h2>
+<p class="text-secondary text-label-md flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                        Tulum, Quintana Roo
+                    </p>
+<div class="flex justify-between items-end">
+<div>
+<p class="text-secondary text-[10px] uppercase">Rendimiento</p>
+<p class="font-bold cyan-accent">9.2%</p>
+</div>
+<div class="text-right">
+<p class="text-primary-fixed font-headline-lg text-headline-lg">$980,000 MXN</p>
+<p class="text-secondary text-[10px] uppercase">1/10 Disponible</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Property Card 3 -->
+<div class="glass-card rounded-2xl overflow-hidden group cursor-pointer">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A modern architectural masterpiece perched on a cliffside in Puerto Vallarta, featuring a cascading infinity pool that seems to merge with the horizon. The design uses dark basalt stones and warm wood accents, creating a high-contrast cinematic depth. Twilight lighting casts a soft violet and cyan glow across the deck. The scene represents ultimate prestige and the breathtaking beauty of coastal living." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD69rNYTM88h7dTwacGMuRa7iuG649iPSTu1xSS4PY3TcUhyrrkZlCeW721QQXG0zkVcuwIZKW2adoRhhqQZ3OPLAZ0d6-ohyfXaPEkhwQktHwZazvIl-CCF6rRuk_gya3DRyVtjv-VF_qJAe86r7W5zQYoUeqtiuRpTlHEfXF21tJlRN1gFUzOvOcqexcqd_UTx0-QOcrnjHvBPeeDGfR43DURI4KjNDIPKOS9xLY8qP4hLPox4FLDsjNVubX8JDB5Kzv7I3fGm5w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute top-4 right-4 bg-black/40 backdrop-blur-md rounded-full p-2">
+<span class="material-symbols-outlined text-white">favorite</span>
+</div>
+</div>
+<div class="p-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-white">Oceanview Residence</h2>
+<p class="text-secondary text-label-md flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                        Puerto Vallarta, Jalisco
+                    </p>
+<div class="flex justify-between items-end">
+<div>
+<p class="text-secondary text-[10px] uppercase">Rendimiento</p>
+<p class="font-bold cyan-accent">8.4%</p>
+</div>
+<div class="text-right">
+<p class="text-primary-fixed font-headline-lg text-headline-lg">$1,150,000 MXN</p>
+<p class="text-secondary text-[10px] uppercase">1/8 Disponible</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Property Card 4 -->
+<div class="glass-card rounded-2xl overflow-hidden group cursor-pointer">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A minimalist mountain retreat in Valle de Bravo, with large glass panels overlooking a mist-covered pine forest. The interiors feature charcoal-colored textures, soft ambient backlighting, and a central suspended fireplace. The visual style is inspired by dark luxury, using a palette of deep grays, wood tones, and subtle cyan light sources. It exudes a feeling of tranquility, architectural precision, and winter exclusivity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW65q_vMnz3ctLM2TceizvjdDH_GnAztsc4ZJrhDYlxAQRyRgXuSdI-4V2KwklH_NFijVQNzNZSlwWdqYPYZkOSL0QzgYSpkA4CPbrDKkUnRefaEHx9CNDf79azuE2AN_cuH13hXKi80hVPGTIoRYCtWfgMQX4luZ9HOIFoxLNMQ8EDLexp21nRCglQe_61PleQyTruWZzz6T6E8CfYLwjQFsANs01VexpOA9p3kkHlrxzS_rSv-Fp0u_aLdtWjLB3qB9ZQkSh2ws"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute top-4 right-4 bg-black/40 backdrop-blur-md rounded-full p-2">
+<span class="material-symbols-outlined text-white">favorite</span>
+</div>
+</div>
+<div class="p-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-white">The Sanctuary</h2>
+<p class="text-secondary text-label-md flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                        Valle de Bravo, EdoMex
+                    </p>
+<div class="flex justify-between items-end">
+<div>
+<p class="text-secondary text-[10px] uppercase">Rendimiento</p>
+<p class="font-bold cyan-accent">7.9%</p>
+</div>
+<div class="text-right">
+<p class="text-primary-fixed font-headline-lg text-headline-lg">$850,000 MXN</p>
+<p class="text-secondary text-[10px] uppercase">1/12 Disponible</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 w-full z-50 h-20 rounded-t-xl bg-surface-container/60 dark:bg-surface-container/60 backdrop-blur-2xl border-t border-white/5 shadow-xl">
+<div class="flex justify-around items-center px-4 pb-safe w-full h-full">
+<div class="flex flex-col items-center justify-center text-secondary-fixed-dim p-3 hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm mt-1">Inicio</span>
+</div>
+<div class="flex items-center justify-center text-primary-fixed drop-shadow-[0_0_8px_rgba(0,251,251,0.5)] bg-surface-variant/40 rounded-full p-3 scale-110 transition-transform duration-300 cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">search</span>
+</div>
+<div class="flex items-center justify-center -mt-8">
+<div class="w-14 h-14 bg-primary-fixed rounded-2xl rotate-45 flex items-center justify-center shadow-[0_0_20px_rgba(0,251,251,0.4)] hover:scale-105 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-black -rotate-45 font-bold">diamond</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary-fixed-dim p-3 hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined">travel_explore</span>
+<span class="font-label-sm text-label-sm mt-1">Viajes</span>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary-fixed-dim p-3 hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1">Perfil</span>
+</div>
+</div>
+</nav>
+<script>
+        // Micro-interaction for filter buttons
+        const filterButtons = document.querySelectorAll('button[class*="rounded-full"]');
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => {
+                    b.classList.remove('bg-primary-fixed', 'text-on-primary-fixed');
+                    b.classList.add('border', 'border-white/10', 'text-secondary');
+                });
+                btn.classList.add('bg-primary-fixed', 'text-on-primary-fixed');
+                btn.classList.remove('border', 'border-white/10', 'text-secondary');
+            });
+        });
+
+        // Add subtle hover effect to cards using JavaScript for smoother response
+        const cards = document.querySelectorAll('.glass-card');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>

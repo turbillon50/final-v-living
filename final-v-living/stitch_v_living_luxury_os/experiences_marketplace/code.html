@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>V Living | Premium Experiences Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .glass-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .cyan-glow {
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+        }
+        .cyan-glow-hover:hover {
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e5e2e1",
+                        "on-primary-fixed": "#002020",
+                        "surface-variant": "#353534",
+                        "surface-bright": "#3a3939",
+                        "surface": "#131313",
+                        "inverse-on-surface": "#313030",
+                        "error": "#ffb4ab",
+                        "secondary": "#c6c6c6",
+                        "surface-dim": "#131313",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "outline-variant": "#3a4a49",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "primary-container": "#00fbfb",
+                        "background": "#131313",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#e5e2e1",
+                        "outline": "#839493",
+                        "primary-fixed": "#00fbfb",
+                        "on-primary-container": "#007070",
+                        "secondary-container": "#454747",
+                        "on-secondary": "#2f3131",
+                        "tertiary": "#ffffff",
+                        "surface-container-low": "#1c1b1b",
+                        "inverse-primary": "#006a6a",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "surface-tint": "#00dddd",
+                        "tertiary-container": "#e5e2e1",
+                        "surface-container": "#201f1f",
+                        "on-tertiary-container": "#656464",
+                        "on-tertiary": "#313030",
+                        "on-primary": "#003737",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-container": "#b5b5b5",
+                        "primary-fixed-dim": "#00dddd",
+                        "primary": "#ffffff",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-primary-fixed-variant": "#004f4f",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-surface-variant": "#b9cac9",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-background": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#353534",
+                        "surface-container-high": "#2a2a2a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "stack-lg": "32px",
+                        "stack-xl": "64px",
+                        "stack-md": "16px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "display-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1.1", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["20px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background selection:bg-primary-fixed/30">
+<!-- Top App Bar -->
+<header class="bg-background/80 dark:bg-background/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-white/10 h-16 w-full">
+<div class="flex justify-between items-center px-margin-mobile h-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-display-md text-display-md tracking-tighter text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-container">V Living</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile pb-32">
+<!-- Hero Section / Title -->
+<section class="py-stack-lg">
+<h2 class="font-display-md text-display-md text-primary mb-stack-sm">Experiencias</h2>
+<p class="font-body-md text-body-md text-secondary max-w-lg">Momentos extraordinarios diseñados exclusivamente para nuestra comunidad de propietarios.</p>
+</section>
+<!-- Search & Filters -->
+<section class="mb-stack-lg sticky top-16 z-40 bg-background/50 backdrop-blur-md py-4 -mx-margin-mobile px-margin-mobile">
+<div class="relative mb-stack-md">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full bg-surface-container-highest border-none rounded-xl py-4 pl-12 pr-4 text-on-surface focus:ring-1 focus:ring-primary-fixed placeholder:text-outline font-body-md text-body-md transition-all" placeholder="Buscar experiencias" type="text"/>
+</div>
+<div class="flex gap-3 overflow-x-auto pb-2 no-scrollbar">
+<button class="px-6 py-2 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md whitespace-nowrap cyan-glow">Todas</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md whitespace-nowrap border border-white/5 hover:bg-surface-variant transition-colors">Yates</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md whitespace-nowrap border border-white/5 hover:bg-surface-variant transition-colors">Bienestar</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md whitespace-nowrap border border-white/5 hover:bg-surface-variant transition-colors">Aventura</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md whitespace-nowrap border border-white/5 hover:bg-surface-variant transition-colors">Gastronomía</button>
+</div>
+</section>
+<!-- Experiences Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Yacht Experience -->
+<article class="glass-card rounded-xl group transition-transform duration-500 hover:-translate-y-1">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A sleek, ultra-luxurious modern yacht cruising through the crystal clear turquoise waters of Los Cabos at sunset. The lighting is golden and cinematic, highlighting the chrome finishes of the vessel. The overall aesthetic is exclusive and high-end, matching a premium dark-mode lifestyle brand with cyan accents. The scene is tranquil and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUQTcuprofyMuwGyW7hLFeGPsU50Pc5YPRbhcDP2BUMabdghH6zrR70gLGJ5Vdi_148q14RPlubSDhrJG_tjQBkxhvVrvRb8DvRBqDI1HyTWW0RPz-WZP6C9YpNn1S1OM0ENABxeZUUWBQ5jhi6djeNB5xDldpueyhtOJKa7aqzqttmYzEt5-1wFVgwGHMRyQHZA_vGpXweoGYCzdqm_YqxvnzOO-OBcewViBKAk0InhwYkoI4YlcarNWWmgO6ROQPW_g6zfxBtYc"/>
+<div class="absolute top-4 right-4 z-10">
+<button class="w-10 h-10 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center text-white active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-primary-fixed/20 backdrop-blur-md text-primary-fixed text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-primary-fixed/30">Exclusivo</span>
+</div>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-primary group-hover:text-primary-fixed transition-colors">Yate privado en Los Cabos</h3>
+<div class="flex items-center gap-2 text-secondary mt-1">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+<p class="font-label-sm text-label-sm">4 horas de navegación</p>
+</div>
+</div>
+<div class="flex items-center justify-between items-end">
+<div class="flex flex-col">
+<span class="text-secondary font-label-sm text-label-sm uppercase tracking-tighter">Desde</span>
+<span class="text-primary font-headline-lg text-headline-lg">$18,000 <span class="text-sm font-normal text-secondary">MXN</span></span>
+</div>
+<button class="bg-primary-fixed text-on-primary-fixed px-6 py-3 rounded-lg font-label-md text-label-md active:scale-95 transition-transform cyan-glow">Reservar</button>
+</div>
+</div>
+</article>
+<!-- Chef Experience -->
+<article class="glass-card rounded-xl group transition-transform duration-500 hover:-translate-y-1">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A world-class private chef meticulously plating a gourmet seafood dish in a high-end, minimalist kitchen with dark marble countertops. The lighting is focused and dramatic, creating a moody, exclusive atmosphere. Soft cyan lighting accents glow in the background. The visual style is cinematic and premium, emphasizing culinary artistry and luxury lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhR9NY8PYtb30jMmpbfdkyGijP_YxuhF2osLE5PGaHYaID4KLJFiPvLpvsXWoFwIx6fZa6hn0Pjd87zrEGA-Nfrrx87Uuth4DnJBHMxDfuhfP0b2-G_Xf5Mez_C-NPT6vL8WnkR1n08EsUncZR4JhJtCEzDiF_jiyNy4UybUcVxl3vuVwVMPfCw1RxCjgOCUxO1qUwUd-sj5ohpoBF1VbTTvscQCHxTAfM_oFdGImuomkUTrokBErACzX2dlKfBCu-GBM7N3b2jio"/>
+<div class="absolute top-4 right-4 z-10">
+<button class="w-10 h-10 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center text-white active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-primary group-hover:text-primary-fixed transition-colors">Chef privado en tu villa</h3>
+<div class="flex items-center gap-2 text-secondary mt-1">
+<span class="material-symbols-outlined text-sm" data-icon="restaurant">restaurant</span>
+<p class="font-label-sm text-label-sm">Cena de 5 tiempos</p>
+</div>
+</div>
+<div class="flex items-center justify-between items-end">
+<div class="flex flex-col">
+<span class="text-secondary font-label-sm text-label-sm uppercase tracking-tighter">Desde</span>
+<span class="text-primary font-headline-lg text-headline-lg">$3,500 <span class="text-sm font-normal text-secondary">MXN</span></span>
+</div>
+<button class="bg-primary-fixed text-on-primary-fixed px-6 py-3 rounded-lg font-label-md text-label-md active:scale-95 transition-transform cyan-glow">Reservar</button>
+</div>
+</div>
+</article>
+<!-- Helicopter Tour -->
+<article class="glass-card rounded-xl group transition-transform duration-500 hover:-translate-y-1">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A modern luxury black helicopter soaring over a dramatic coastal landscape with rugged cliffs and turquoise ocean. The sky is a deep twilight blue, with the first stars appearing. The lighting is ethereal and sophisticated, with subtle cyan reflections on the helicopter's fuselage. The mood is adventurous yet highly exclusive and serene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXQUbwxkSl3J-rV7vHX2U73p80siY7-JkLwXl19Q2nkziiCRqyG3GUpaEhNZY_rgcmVDrWQjrhDJ_1RzI1lEy2qZZZ3VwP7CkHqJZhw1a3gYF0G5FH_ozIh3FCJU73dwuUaQStDsS2gcrHc8o_rJOpyPTwcUf1vt4xc4361l_fYmqtKk8a8BjghUl3rsHIvvr1wLLi2yfYe-BrhPm-mufUcr1WmxPPUzpDhV0qBbdXdYeCIXHKEtpZg1xoUL85VdLZ2_hULBbjwxw"/>
+<div class="absolute top-4 right-4 z-10">
+<button class="w-10 h-10 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center text-white active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-primary group-hover:text-primary-fixed transition-colors">Tour en helicóptero</h3>
+<div class="flex items-center gap-2 text-secondary mt-1">
+<span class="material-symbols-outlined text-sm" data-icon="flight">flight</span>
+<p class="font-label-sm text-label-sm">45 minutos de vuelo</p>
+</div>
+</div>
+<div class="flex items-center justify-between items-end">
+<div class="flex flex-col">
+<span class="text-secondary font-label-sm text-label-sm uppercase tracking-tighter">Desde</span>
+<span class="text-primary font-headline-lg text-headline-lg">$12,500 <span class="text-sm font-normal text-secondary">MXN</span></span>
+</div>
+<button class="bg-primary-fixed text-on-primary-fixed px-6 py-3 rounded-lg font-label-md text-label-md active:scale-95 transition-transform cyan-glow">Reservar</button>
+</div>
+</div>
+</article>
+<!-- Wellness Experience -->
+<article class="glass-card rounded-xl group transition-transform duration-500 hover:-translate-y-1">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A tranquil luxury spa setting with warm candle lighting and soft blue ambient glows. A professional therapist is performing a massage with hot stones on a person in a serene, obsidian-themed treatment room. The atmosphere is quiet, meditative, and extremely high-end. High-impact cinematic depth and texture emphasize relaxation and premium quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd9KVRPlYb6_dUbUOIiuryuQ9Agh-KAXX8TInW3QbPHwQKhsbi0dz9Nhb8hZoaC0MqDHbDqC9AAcaEeT3jZuWSVJ2-MJYP9jDoVYnd8MHsqTA9F_654FQDzxVoT_DVvbWBzbOcly8aQDGRpWN6ZSww1y-52wYH-2o7Bgq_TKZGBgqnUT4P4iBXa9FWBfc5sv13gLLJt0bjd3lkDoNhz2PmAiOuWvXJUTfatSjZmPWjuDVzEYIu3JlPi0hjPGZheSNpB7ajviNgfaE"/>
+<div class="absolute top-4 right-4 z-10">
+<button class="w-10 h-10 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center text-white active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-primary group-hover:text-primary-fixed transition-colors">Masajes en tu villa</h3>
+<div class="flex items-center gap-2 text-secondary mt-1">
+<span class="material-symbols-outlined text-sm" data-icon="spa">spa</span>
+<p class="font-label-sm text-label-sm">Terapeuta profesional</p>
+</div>
+</div>
+<div class="flex items-center justify-between items-end">
+<div class="flex flex-col">
+<span class="text-secondary font-label-sm text-label-sm uppercase tracking-tighter">Desde</span>
+<span class="text-primary font-headline-lg text-headline-lg">$2,800 <span class="text-sm font-normal text-secondary">MXN</span></span>
+</div>
+<button class="bg-primary-fixed text-on-primary-fixed px-6 py-3 rounded-lg font-label-md text-label-md active:scale-95 transition-transform cyan-glow">Reservar</button>
+</div>
+</div>
+</article>
+<!-- Wine Tasting -->
+<article class="glass-card rounded-xl group transition-transform duration-500 hover:-translate-y-1">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="An elegant wine tasting event in a modern, dark-themed wine cellar. A sommelier is pouring deep red wine into a crystal glass. The lighting is low and sophisticated, with dramatic highlights and a subtle cyan glow reflecting off the glass bottles. The scene feels intimate, exclusive, and representative of a high-luxury lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADs5e4dz9DlYElc0QZvcnMPdCchj9W7UKvmE2KOR8tuPnhpQixr4hvHPerNkCfJrbNBA42vWI_FzsB1q2UNWtqJotSnHFh9zswVtPQv8oUBjw3Lzwz-n2aYu-DFoIJCdIjatQ0mXYC7Iu2lqT35aqOGITKiC5DGyQwT58kzv15BCQaStxxBOy_48kG88Avnh6409TwtgOm7hkxaw5oHw9fO7LaPFQ0DpjhMpIw9CC5CQ7noH3eTxm4nGPc0Hi0oWpW9g2GySS831s"/>
+<div class="absolute top-4 right-4 z-10">
+<button class="w-10 h-10 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center text-white active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-primary group-hover:text-primary-fixed transition-colors">Cata de vinos premium</h3>
+<div class="flex items-center gap-2 text-secondary mt-1">
+<span class="material-symbols-outlined text-sm" data-icon="liquor">liquor</span>
+<p class="font-label-sm text-label-sm">Sommelier privado</p>
+</div>
+</div>
+<div class="flex items-center justify-between items-end">
+<div class="flex flex-col">
+<span class="text-secondary font-label-sm text-label-sm uppercase tracking-tighter">Desde</span>
+<span class="text-primary font-headline-lg text-headline-lg">$5,200 <span class="text-sm font-normal text-secondary">MXN</span></span>
+</div>
+<button class="bg-primary-fixed text-on-primary-fixed px-6 py-3 rounded-lg font-label-md text-label-md active:scale-95 transition-transform cyan-glow">Reservar</button>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 h-20 rounded-t-xl bg-surface-container/60 dark:bg-surface-container/60 backdrop-blur-2xl border-t border-white/5 shadow-xl">
+<div class="flex justify-around items-center px-4 pb-safe h-full w-full">
+<button class="flex items-center justify-center text-secondary-fixed-dim p-3 hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</button>
+<button class="flex items-center justify-center text-secondary-fixed-dim p-3 hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="flex items-center justify-center text-primary-fixed drop-shadow-[0_0_8px_rgba(0,251,251,0.5)] bg-surface-variant/40 rounded-full p-3 scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined" data-icon="diamond" style="font-variation-settings: 'FILL' 1;">diamond</span>
+</button>
+<button class="flex items-center justify-center text-secondary-fixed-dim p-3 hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="travel_explore">travel_explore</span>
+</button>
+<button class="flex items-center justify-center text-secondary-fixed-dim p-3 hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</nav>
+<script>
+        // Micro-interactions for glass cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const xPct = (x / rect.width - 0.5) * 10;
+                const yPct = (y / rect.height - 0.5) * -10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${yPct}deg) rotateY(${xPct}deg) translateY(-4px)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+            });
+        });
+    </script>
+</body></html>

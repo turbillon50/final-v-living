@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Casa del Mar | V Living Luxury Fractional</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        :root {
+            --surface-glass: rgba(18, 18, 18, 0.7);
+            --obsidian-border: rgba(255, 255, 255, 0.1);
+        }
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-panel {
+            background: var(--surface-glass);
+            backdrop-filter: blur(24px);
+            border: 1px solid var(--obsidian-border);
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(0, 251, 251, 0.3);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e5e2e1",
+                        "on-primary-fixed": "#002020",
+                        "surface-variant": "#353534",
+                        "surface-bright": "#3a3939",
+                        "surface": "#131313",
+                        "inverse-on-surface": "#313030",
+                        "error": "#ffb4ab",
+                        "secondary": "#c6c6c6",
+                        "surface-dim": "#131313",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "outline-variant": "#3a4a49",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "primary-container": "#00fbfb",
+                        "background": "#131313",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#e5e2e1",
+                        "outline": "#839493",
+                        "primary-fixed": "#00fbfb",
+                        "on-primary-container": "#007070",
+                        "secondary-container": "#454747",
+                        "on-secondary": "#2f3131",
+                        "tertiary": "#ffffff",
+                        "surface-container-low": "#1c1b1b",
+                        "inverse-primary": "#006a6a",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "surface-tint": "#00dddd",
+                        "tertiary-container": "#e5e2e1",
+                        "surface-container": "#201f1f",
+                        "on-tertiary-container": "#656464",
+                        "on-tertiary": "#313030",
+                        "on-primary": "#003737",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-container": "#b5b5b5",
+                        "primary-fixed-dim": "#00dddd",
+                        "primary": "#ffffff",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-primary-fixed-variant": "#004f4f",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-surface-variant": "#b9cac9",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-background": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#353534",
+                        "surface-container-high": "#2a2a2a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "stack-lg": "32px",
+                        "stack-xl": "64px",
+                        "stack-md": "16px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "display-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1.1", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["20px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface selection:bg-primary-fixed/30 pb-32">
+<!-- Top App Bar (Top-level shell suppression check: This is a Detail page, so we use a standard back-header) -->
+<header class="fixed top-0 w-full z-50 bg-background/40 backdrop-blur-md px-margin-mobile md:px-margin-desktop h-16 flex items-center justify-between border-b border-white/5">
+<button class="w-10 h-10 flex items-center justify-center rounded-full glass-panel hover:bg-white/10 transition-colors" onclick="window.history.back()">
+<span class="material-symbols-outlined text-primary-fixed">arrow_back</span>
+</button>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">Detalle de propiedad</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-full glass-panel hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-primary-fixed">favorite</span>
+</button>
+</header>
+<main class="max-w-7xl mx-auto w-full">
+<!-- Cinematic Hero Gallery -->
+<section class="relative h-[574px] md:h-[707px] w-full overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A breathtaking ultra-luxury villa called Casa del Mar perched on a rocky cliff overlooking the turquoise waters of Los Cabos. The architecture is modern and minimalist with clean lines and expansive glass walls. A stunning infinity pool reflects the sunset sky filled with warm oranges and deep purples. The mood is sophisticated and exclusive with soft ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE28TDgQWLupLLHdQ_ZH0occoRY7xegDZw5GAYibLZe-WWqPh994p6C3wTSXL4S1Zm0o9ICETc8cgYqkXfmvE3GzTu525VZoLOIArww-4Yzj0OXa1foQ-X0hbKbBmjX8sosB9ChAChE_EHrs1FN-vjY8-iQwP5SlbDl6RQ67P9kZRdRVNw4fQH0O0civ4wBL1IR4eTv6RIi7fJdxcHXUJT7yqmlFbIOkRxLIliJ019OdbY0phBtzVppVWt6yM3iyKY34TtyyLWHwA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<!-- Gallery Indicator -->
+<div class="absolute bottom-10 left-margin-mobile md:left-margin-desktop flex gap-2">
+<span class="px-4 py-1.5 rounded-full glass-panel font-label-sm text-label-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">photo_library</span>
+                    1/12
+                </span>
+<span class="px-4 py-1.5 rounded-full glass-panel bg-primary-container/20 text-primary-fixed font-label-sm text-label-sm">Fraccional</span>
+</div>
+</section>
+<div class="px-margin-mobile md:px-margin-desktop -mt-16 relative z-10 space-y-stack-lg">
+<!-- Property Header & Quick Stats -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter items-start">
+<div class="lg:col-span-2 space-y-4">
+<h1 class="font-display-md text-display-md text-primary drop-shadow-lg">Casa del Mar</h1>
+<div class="flex items-center gap-4 text-secondary">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-fixed-dim text-lg">location_on</span>
+<span class="font-label-md text-label-md">Los Cabos, Baja California Sur</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-fixed-dim text-lg">star</span>
+<span class="font-label-md text-label-md">4.9 (32 reviews)</span>
+</div>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-3 gap-2 py-4">
+<div class="glass-panel rounded-xl p-4 flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-label-sm text-secondary-fixed-dim mb-1">Fracción</span>
+<span class="font-headline-lg text-headline-lg text-primary-fixed">1/8</span>
+</div>
+<div class="glass-panel rounded-xl p-4 flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-label-sm text-secondary-fixed-dim mb-1">Semanas</span>
+<span class="font-headline-lg text-headline-lg text-primary-fixed">6</span>
+</div>
+<div class="glass-panel rounded-xl p-4 flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-label-sm text-secondary-fixed-dim mb-1">Rendimiento</span>
+<span class="font-headline-lg text-headline-lg text-primary-fixed">8%</span>
+</div>
+</div>
+</div>
+<!-- Price Card -->
+<div class="glass-panel rounded-2xl p-6 border-primary-container/20 shadow-[0_0_30px_rgba(0,251,251,0.05)]">
+<p class="font-label-md text-label-md text-secondary-fixed-dim mb-1 uppercase tracking-widest">Inversión desde</p>
+<h2 class="font-display-md text-display-md text-primary-fixed mb-4">$1,250,000 <span class="text-headline-lg font-normal">MXN</span></h2>
+<button class="w-full h-14 bg-primary-container text-on-primary-fixed font-label-md text-label-md rounded-full hover:brightness-110 transition-all flex items-center justify-center gap-2">
+                        Ver fracciones disponibles
+                        <span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Property Overview -->
+<section class="space-y-4">
+<h3 class="font-headline-lg text-headline-lg text-primary">Sobre la propiedad</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-3xl">
+                    Exclusiva propiedad frente al mar con acceso directo a playa privada. Esta villa redefine el lujo en Los Cabos con acabados en mármol italiano, sistemas de automatización inteligentes y vistas panorámicas al Mar de Cortés. Incluye servicio de conserjería 24/7 y mantenimiento premium integral.
+                </p>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-surface-variant/30 rounded-full border border-white/5 text-label-md text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed-dim">pool</span> Piscina infinita
+                    </span>
+<span class="px-4 py-2 bg-surface-variant/30 rounded-full border border-white/5 text-label-md text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed-dim">waves</span> Acceso a playa
+                    </span>
+<span class="px-4 py-2 bg-surface-variant/30 rounded-full border border-white/5 text-label-md text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed-dim">local_bar</span> Cava privada
+                    </span>
+<span class="px-4 py-2 bg-surface-variant/30 rounded-full border border-white/5 text-label-md text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed-dim">fitness_center</span> Gym privado
+                    </span>
+</div>
+</section>
+<!-- Availability Calendar (Luxury UI) -->
+<section class="space-y-stack-md">
+<div class="flex justify-between items-end">
+<h3 class="font-headline-lg text-headline-lg text-primary">Disponibilidad</h3>
+<span class="font-label-md text-label-md text-primary-fixed">Mayo 2024</span>
+</div>
+<div class="glass-panel rounded-2xl p-6 overflow-hidden">
+<!-- Calendar Grid -->
+<div class="grid grid-cols-7 gap-1 text-center font-label-sm text-label-sm text-on-surface-variant mb-4">
+<div>DOM</div><div>LUN</div><div>MAR</div><div>MIE</div><div>JUE</div><div>VIE</div><div>SAB</div>
+</div>
+<div class="grid grid-cols-7 gap-2">
+<!-- Simplified Calendar Rendering -->
+<div class="h-10 flex items-center justify-center rounded-lg text-secondary/30">28</div>
+<div class="h-10 flex items-center justify-center rounded-lg text-secondary/30">29</div>
+<div class="h-10 flex items-center justify-center rounded-lg text-secondary/30">30</div>
+<div class="h-10 flex items-center justify-center rounded-lg text-secondary">1</div>
+<div class="h-10 flex items-center justify-center rounded-lg text-secondary">2</div>
+<div class="h-10 flex items-center justify-center rounded-lg text-secondary">3</div>
+<div class="h-10 flex items-center justify-center rounded-lg text-secondary">4</div>
+<!-- ... Days 5-19 ... -->
+<div class="col-span-7 grid grid-cols-7 gap-2">
+<div class="h-10 flex items-center justify-center rounded-lg text-secondary">5</div>
+<div class="h-10 flex items-center justify-center rounded-lg text-secondary">6</div>
+<div class="h-10 flex items-center justify-center rounded-lg text-secondary">7</div>
+<div class="h-10 flex items-center justify-center rounded-lg text-secondary">8</div>
+<div class="h-10 flex items-center justify-center rounded-lg text-secondary">9</div>
+<div class="h-10 flex items-center justify-center rounded-lg text-secondary">10</div>
+<div class="h-10 flex items-center justify-center rounded-lg text-secondary">11</div>
+</div>
+<!-- Active Range -->
+<div class="h-10 flex items-center justify-center rounded-lg bg-surface-variant/50 text-secondary">19</div>
+<div class="h-10 flex items-center justify-center rounded-l-full bg-primary-container text-on-primary-fixed font-bold">20</div>
+<div class="h-10 flex items-center justify-center bg-primary-container/60 text-on-primary-fixed">21</div>
+<div class="h-10 flex items-center justify-center bg-primary-container/60 text-on-primary-fixed">22</div>
+<div class="h-10 flex items-center justify-center bg-primary-container/60 text-on-primary-fixed">23</div>
+<div class="h-10 flex items-center justify-center bg-primary-container/60 text-on-primary-fixed">24</div>
+<div class="h-10 flex items-center justify-center rounded-r-full bg-primary-container text-on-primary-fixed font-bold">25</div>
+</div>
+<div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-white/5">
+<div class="space-y-1">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Check-in</p>
+<p class="font-label-md text-label-md text-primary">20 May, 2024</p>
+</div>
+<div class="space-y-1">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Check-out</p>
+<p class="font-label-md text-label-md text-primary">25 May, 2024</p>
+</div>
+<div class="space-y-1">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Huéspedes</p>
+<p class="font-label-md text-label-md text-primary">6 Personas</p>
+</div>
+<div class="flex items-center justify-end">
+<button class="h-10 px-6 bg-white/5 hover:bg-white/10 rounded-full font-label-sm text-label-sm transition-colors">Modificar</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Nearby Experiences (Asymmetric Layout) -->
+<section class="space-y-6">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-lg text-headline-lg text-primary">Experiencias locales</h3>
+<button class="text-primary-fixed font-label-md text-label-md">Ver todo</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Experience Card 1 -->
+<div class="group relative aspect-[4/5] rounded-3xl overflow-hidden glass-panel">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A luxurious private yacht sailing through the crystal clear deep blue waters of the Gulf of California. The boat has a sleek, polished white design and modern aesthetics. Sunlight glimmers on the water ripples. A few people are relaxing on the deck under a clear sunny sky. The atmosphere is wealthy and serene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7XLJP7yeShDQqbOFzAHIq5bAr-EKrisDyc9PXokbB-rJ-qs3v6V5BHJt4m02vnTAcuW-MqXAK1d8kbmb4gDmiUZvXNSGRYsHHzStXGSOiP1p94z-9jlNeXrnR4LY-rNHKSypd6Av4kCaT4iUCpUs4JQ0vffpu3Ks2BxJ1LwzU0xrJ2KBRPl_sSHxcQsOYzFF5tr9xk2AKusgJYP7BYkPjvW2VPf4F2-3WoitjVDS5oaL0ZlsLV12IgL39z9oB_YMr9ih085PVvJ8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<p class="font-label-sm text-label-sm text-primary-fixed mb-1 uppercase tracking-widest">Navegación</p>
+<h4 class="font-headline-lg text-headline-lg text-primary mb-2">Yate privado Los Cabos</h4>
+<p class="font-label-md text-label-md text-secondary-fixed-dim">Desde $18,000 MXN</p>
+</div>
+</div>
+<!-- Experience Card 2 -->
+<div class="group relative aspect-[4/5] rounded-3xl overflow-hidden glass-panel">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A professional private chef in a crisp white uniform preparing a gourmet seafood dish in a modern high-end outdoor kitchen. The lighting is warm and golden during sunset. Exquisite ingredients like fresh lobster and aromatic herbs are arranged on a black marble countertop. The mood is intimate, luxurious and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcY1dwEa0owjZLIi53jf4FekQsthZ0-HePr_ZxeBwQL3nr8x1ZZ6Brqc80DC8GMT-se1SRiLK6L8f8WiPFDOPtX2Vrjpu2WO_zYPCoVy_yqPIc_CdsEScHl4JNO7CKC2Kl0R2Rj889lNFQHYGDC3g3_9fh_-NKMfFMkoCtJ4nVSFnwq4jRLheveMOhUdo9LRL_30LP3YefZV-gvO7-I80q-vjHMwCwcTyxMc3smEiwLiEE2TyBaD7LbmTRaKP2pTPVtJ1jcukvTlQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<p class="font-label-sm text-label-sm text-primary-fixed mb-1 uppercase tracking-widest">Gastronomía</p>
+<h4 class="font-headline-lg text-headline-lg text-primary mb-2">Chef privado en villa</h4>
+<p class="font-label-md text-label-md text-secondary-fixed-dim">Desde $3,500 MXN</p>
+</div>
+</div>
+<!-- Experience Card 3 -->
+<div class="group relative aspect-[4/5] rounded-3xl overflow-hidden glass-panel">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A luxury helicopter flying low over the dramatic desert landscape and blue ocean of Los Cabos at sunrise. The machine is sleek and metallic. The vast scenery of cliffs and ocean below is bathed in soft early morning light. The mood is adventurous, exclusive, and high-energy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfdouuxTpFwlpZjRLyggjxWaaAbQ1N85MQ-VVlhj1lM6VRgY8nz6GAPZ5Up9Gs2tsjQobMf72fEnl_F2Igf3O22-mNQi0gmZjGoym9fz53ymHTuHfAJKeJaYoWz0r6XBJO0qsFqUd2UQjJ7YRCFhXbAP8esY62pW-nw15bBx-7Hhqe9lMfyq5tTRFvrOPLGvrpuTvCGed03bkgjE8rDW3_VyULjObWChaswcy8gqjGShmheUtkrIv7wMLkHZ1F_yr0AqK9geWAhEw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<p class="font-label-sm text-label-sm text-primary-fixed mb-1 uppercase tracking-widest">Aventura</p>
+<h4 class="font-headline-lg text-headline-lg text-primary mb-2">Tour en helicóptero</h4>
+<p class="font-label-md text-label-md text-secondary-fixed-dim">Desde $22,000 MXN</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Document Vault Preview (Bento-style) -->
+<section class="space-y-4">
+<h3 class="font-headline-lg text-headline-lg text-primary">Bóveda de Documentos</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="glass-panel p-5 rounded-2xl flex items-center justify-between group cursor-pointer hover:border-primary-container/40 transition-all">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-fixed">description</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Contrato de Fideicomiso</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">PDF • 2.4 MB</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed-dim group-hover:text-primary-fixed">download</span>
+</div>
+<div class="glass-panel p-5 rounded-2xl flex items-center justify-between group cursor-pointer hover:border-primary-container/40 transition-all">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-fixed">verified_user</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Certificado de Propiedad</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">PDF • 1.1 MB</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed-dim group-hover:text-primary-fixed">download</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Sticky Footer (Transactional Intent: Suppression rule applies to global nav, replaced by focused task actions) -->
+<div class="fixed bottom-0 left-0 right-0 z-50 p-margin-mobile md:p-8">
+<div class="max-w-4xl mx-auto glass-panel p-4 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col md:flex-row gap-4">
+<button class="flex-1 h-14 border border-white/20 hover:bg-white/5 text-primary rounded-2xl font-label-md text-label-md transition-all active:scale-[0.98]">
+                Reservar estancia
+            </button>
+<button class="flex-1 h-14 bg-primary-container text-on-primary-fixed rounded-2xl font-label-md text-label-md shadow-[0_4px_20px_rgba(0,251,251,0.2)] hover:brightness-110 transition-all active:scale-[0.98]">
+                Adquirir fracción
+            </button>
+</div>
+</div>
+<!-- Micro-interaction Scripts -->
+<script>
+        // Simple parallax effect for hero image
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('section img');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.4}px)`;
+            }
+        });
+    </script>
+</body></html>
