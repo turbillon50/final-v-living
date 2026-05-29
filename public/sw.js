@@ -1,4 +1,4 @@
-// V Living — minimal service worker for PWA installability + offline shell.
+// V·Living — minimal service worker for PWA installability + offline shell.
 const CACHE = "vliving-v1";
 const APP_SHELL = ["/", "/manifest.webmanifest", "/icon.svg"];
 

@@ -1,0 +1,6 @@
+Coloca aquí tu logo oficial:
+- public/logo.svg   (preferido, vectorial)
+- public/logo.png   (alternativa, fondo transparente)
+
+Renders de proyectos (ej. ATTIK):
+- public/projects/attik/01.jpg (portada), 02.jpg, 03.jpg ...

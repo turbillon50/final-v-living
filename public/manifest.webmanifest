@@ -1,7 +1,7 @@
 {
-  "name": "V Living — Fractional Ownership • Stays • Experiences",
-  "short_name": "V Living",
-  "description": "Plataforma premium para propiedad fraccional, estancias, experiencias y servicios.",
+  "name": "V·Living — Fractional Ownership",
+  "short_name": "V·Living",
+  "description": "Fractional ownership en la Riviera Maya. 14 fracciones · 3 semanas/año, gestión de punta a punta (V·Billing) bajo Fideicomiso Bancario.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

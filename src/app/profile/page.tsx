@@ -3,7 +3,7 @@ import { ProfileView } from "@/components/pages/ProfileView";
 
 export const metadata: Metadata = {
   title: "Perfil",
-  description: "Tu cuenta, membresía y preferencias V Living.",
+  description: "Tu cuenta, fracción y preferencias V·Living.",
 };
 
 export default function ProfilePage() {

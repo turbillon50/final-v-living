@@ -26,7 +26,7 @@ export function ProfileView() {
         <p className="font-label-sm text-label-sm text-accent uppercase tracking-widest mt-1">
           {t("profile.member")}
         </p>
-        <p className="font-body-md text-on-surface-variant mt-2">alexander@vliving.com</p>
+        <p className="font-body-md text-on-surface-variant mt-2">alexander@vliving.life</p>
         <div className="flex items-center gap-3 mt-6">
           <button className="px-8 py-3 min-h-[44px] rounded-full border border-border text-ink font-label-md text-label-md hover:fill-subtle transition-colors">
             {t("profile.editProfile")}

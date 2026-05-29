@@ -3,7 +3,7 @@ import { AdminView } from "@/components/pages/AdminView";
 
 export const metadata: Metadata = {
   title: "Admin",
-  description: "Panel administrativo de V Living.",
+  description: "Panel administrativo de V·Living.",
 };
 
 export default function AdminPage() {

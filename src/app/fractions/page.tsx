@@ -3,9 +3,9 @@ import { FractionsExplorer } from "@/components/FractionsExplorer";
 import { properties } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Marketplace de Fracciones",
+  title: "Desarrollos",
   description:
-    "Adquiere fracciones de propiedades premium con rendimiento y estancias garantizadas.",
+    "Desarrollos boutique de V·Living en la Riviera Maya (Cancún · Tulum · Playa del Carmen). 14 fracciones · 3 semanas/año, bajo Fideicomiso Bancario.",
 };
 
 export default function FractionsPage({

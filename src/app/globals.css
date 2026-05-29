@@ -4,7 +4,7 @@
 
 /*
   ============================================================
-  V Living — Theme tokens (Day "Platinum" + Night "Obsidian")
+  V·Living — Theme tokens (Day "Platinum" + Night "Obsidian")
   All colors expressed as space-separated RGB channels so they
   compose with Tailwind's <alpha-value> via rgb(var(--x)/<a>).
   ============================================================
@@ -31,6 +31,8 @@
     --glow: 6 182 182;
     --glow-alpha: 0.18;
     --hairline: 0 0 0;
+    --gold: 176 138 58; /* #b08a3a — readable amber on light */
+    --gold-strong: 153 119 48;
 
     color-scheme: light;
   }
@@ -56,6 +58,8 @@
     --glow: 0 251 251;
     --glow-alpha: 0.2;
     --hairline: 255 255 255;
+    --gold: 212 175 55; /* #d4af37 */
+    --gold-strong: 201 162 75; /* #c9a24b */
 
     color-scheme: dark;
   }
@@ -156,6 +160,90 @@
   }
   .cyan-accent {
     color: rgb(var(--accent));
+  }
+
+  /* ---------- Gold / trust accents ---------- */
+  .gold-accent {
+    color: rgb(var(--gold));
+  }
+  /* Credibility chips — fideicomiso, V·Billing, +10 años */
+  .trust-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgb(var(--gold));
+    background: rgb(var(--gold) / 0.1);
+    border: 1px solid rgb(var(--gold) / 0.35);
+    white-space: nowrap;
+  }
+  .trust-chip::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 9999px;
+    background: rgb(var(--gold));
+  }
+
+  /* ---------- Editorial helpers ---------- */
+  /* Eyebrow: small uppercase cyan label with a short underline bar */
+  .eyebrow {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgb(var(--accent));
+  }
+  .eyebrow::after {
+    content: "";
+    width: 32px;
+    height: 2px;
+    background: rgb(var(--accent));
+  }
+  /* Pill badge: cyan ring + cyan dot */
+  .pill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgb(var(--accent));
+    border: 1px solid rgb(var(--accent) / 0.5);
+    background: rgb(var(--accent) / 0.06);
+    white-space: nowrap;
+  }
+  .pill-badge::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background: rgb(var(--accent));
+    box-shadow: 0 0 8px rgb(var(--accent));
+  }
+  /* Big editorial display headline */
+  .editorial-title {
+    font-family: var(--font-display), var(--font-hanken), sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+  }
+  /* Subtle slide-number motif */
+  .slide-no {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.1em;
+    color: rgb(var(--on-surface-variant));
   }
 
   .hide-scrollbar::-webkit-scrollbar {

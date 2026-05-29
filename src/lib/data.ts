@@ -8,166 +8,131 @@ import type {
   Stay,
 } from "./types";
 
-// Stable, high-quality cinematic imagery (Unsplash). Used as mock content
-// until real property media is wired through the CMS / database.
-const img = (id: string, w = 1200) =>
+// Stable, on-brand Riviera-Maya imagery (Unsplash) used as demo content until
+// real renders are uploaded to /public/projects/<id>/NN.jpg.
+const img = (id: string, w = 1600) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
 
+// Local render path helper (user uploads these later; SmartImage falls back to
+// an elegant branded placeholder while they are absent).
+const render = (id: string, n: string) => `/projects/${id}/${n}.jpg`;
+
+// ---- Riviera Maya destinations (ONLY Cancún / Tulum / Playa del Carmen) ----
 export const destinations: Destination[] = [
-  { name: "Cancún", properties: 4, image: img("photo-1510097467424-192d713fd8b2") },
-  { name: "Los Cabos", properties: 7, image: img("photo-1597531072931-8fbe924f5b8e") },
-  { name: "Tulum", properties: 12, image: img("photo-1518105779142-d975f22f1b0a") },
-  { name: "Riviera Maya", properties: 8, image: img("photo-1571896349842-33c89424de2d") },
-  { name: "Valle de Bravo", properties: 5, image: img("photo-1449158743715-0a90ebb6d2d8") },
+  { name: "Tulum", properties: 1, image: img("photo-1518105779142-d975f22f1b0a") },
+  { name: "Cancún", properties: 1, image: img("photo-1510097467424-192d713fd8b2") },
+  { name: "Playa del Carmen", properties: 1, image: img("photo-1571003123894-1f0594d2b5d9") },
 ];
 
+// ---- Developments (projects) ----
 export const properties: Property[] = [
   {
-    id: "casa-del-mar",
-    name: "Casa del Mar",
-    location: "Los Cabos, Baja California Sur",
-    city: "Los Cabos",
-    image: img("photo-1613490493576-7fde63acd811"),
-    gallery: [
-      img("photo-1613490493576-7fde63acd811"),
-      img("photo-1512917774080-9991f1c4c750"),
-      img("photo-1600585154340-be6161a56a0c"),
-    ],
-    priceMXN: 1250000,
-    fraction: "1/8",
-    weeksPerYear: 6,
-    yieldPct: 8.6,
-    rating: 4.9,
-    reviews: 32,
-    category: "Playa",
-    featured: true,
-    description:
-      "Exclusiva propiedad frente al mar con acceso directo a playa privada. Esta villa redefine el lujo en Los Cabos con acabados en mármol italiano, sistemas de automatización inteligentes y vistas panorámicas al Mar de Cortés. Incluye servicio de conserjería 24/7 y mantenimiento premium integral.",
-    amenities: [
-      { icon: "pool", label: "Piscina infinita" },
-      { icon: "waves", label: "Acceso a playa" },
-      { icon: "local_bar", label: "Cava privada" },
-      { icon: "fitness_center", label: "Gym privado" },
-    ],
-  },
-  {
-    id: "villa-paraiso",
-    name: "Villa Paraíso",
+    id: "attik",
+    name: "ATTIK",
+    tagline: "fractional living · by V·Living",
     location: "Tulum, Quintana Roo",
     city: "Tulum",
-    image: img("photo-1582268611958-ebfd161ef9cf"),
-    gallery: [img("photo-1582268611958-ebfd161ef9cf"), img("photo-1505691938895-1758d7feb511")],
-    priceMXN: 980000,
-    fraction: "1/10",
-    weeksPerYear: 5,
-    yieldPct: 9.2,
-    rating: 4.8,
-    reviews: 21,
-    category: "Wellness",
-    description:
-      "Refugio frente al mar con arquitectura maya contemporánea y acabados en obsidiana. Privacidad absoluta a pasos del Caribe, ideal para bienestar y desconexión total.",
-    amenities: [
-      { icon: "spa", label: "Spa privado" },
-      { icon: "waves", label: "Playa privada" },
-      { icon: "self_improvement", label: "Yoga deck" },
+    state: "Quintana Roo",
+    status: "Disponible",
+    delivery: "Agosto 2026",
+    kind: "Edificio boutique de autor",
+    totalFractions: 14,
+    weeksPerFraction: 3,
+    image: render("attik", "01"),
+    gallery: [
+      render("attik", "01"),
+      render("attik", "02"),
+      render("attik", "03"),
+      render("attik", "04"),
     ],
-  },
-  {
-    id: "oceanview-residence",
-    name: "Oceanview Residence",
-    location: "Puerto Vallarta, Jalisco",
-    city: "Puerto Vallarta",
-    image: img("photo-1564013799919-ab600027ffc6"),
-    gallery: [img("photo-1564013799919-ab600027ffc6"), img("photo-1600596542815-ffad4c1539a9")],
-    priceMXN: 1150000,
-    fraction: "1/8",
-    weeksPerYear: 6,
-    yieldPct: 8.4,
-    rating: 4.7,
-    reviews: 28,
-    category: "Playa",
+    priceFromMXN: 2_450_000,
     description:
-      "Obra maestra arquitectónica sobre acantilado con piscina infinita que se funde con el horizonte. Piedra basáltica y maderas cálidas para una profundidad cinematográfica.",
+      "ATTIK es nuestro proyecto insignia: un edificio boutique de autor en el corazón de Tulum, Quintana Roo. Se vende en 14 fracciones; cada fracción te da 3 semanas al año (1 premium, 1 intermedia y 1 flexible). Compras tu fracción y la disfrutas, la rentas o la revendes — nosotros la operamos por ti, llave en mano, bajo Fideicomiso Bancario. Entrega Agosto 2026.",
     amenities: [
-      { icon: "pool", label: "Piscina infinita" },
-      { icon: "deck", label: "Terraza panorámica" },
-      { icon: "local_bar", label: "Bar exterior" },
+      { icon: "directions_car", label: "Traslado aeropuerto" },
+      { icon: "cleaning_services", label: "Mucama · limpieza diaria" },
+      { icon: "restaurant", label: "−30% en restaurantes" },
+      { icon: "sailing", label: "Yates · tours · vida nocturna" },
+      { icon: "concierge", label: "Concierge premium" },
+      { icon: "account_balance", label: "Fideicomiso bancario" },
     ],
-  },
-  {
-    id: "the-sanctuary",
-    name: "The Sanctuary",
-    location: "Valle de Bravo, Estado de México",
-    city: "Valle de Bravo",
-    image: img("photo-1518780664697-55e3ad937233"),
-    gallery: [img("photo-1518780664697-55e3ad937233"), img("photo-1520250497591-112f2f40a3f4")],
-    priceMXN: 850000,
-    fraction: "1/12",
-    weeksPerYear: 4,
-    yieldPct: 7.9,
-    rating: 4.9,
-    reviews: 17,
-    category: "Montaña",
-    description:
-      "Retiro minimalista de montaña con grandes paneles de cristal sobre un bosque de pinos. Texturas en carbón, iluminación ambiental suave y chimenea suspendida central.",
-    amenities: [
-      { icon: "fireplace", label: "Chimenea central" },
-      { icon: "forest", label: "Bosque privado" },
-      { icon: "hot_tub", label: "Jacuzzi exterior" },
-    ],
-  },
-  {
-    id: "skyline-penthouse",
-    name: "Skyline Penthouse",
-    location: "Polanco, Ciudad de México",
-    city: "Ciudad de México",
-    image: img("photo-1545324418-cc1a3fa10c00"),
-    gallery: [img("photo-1545324418-cc1a3fa10c00")],
-    priceMXN: 1450000,
-    fraction: "1/6",
-    weeksPerYear: 8,
-    yieldPct: 8.1,
-    rating: 4.8,
-    reviews: 24,
-    category: "Ciudad",
     featured: true,
-    description:
-      "Penthouse en el corazón de Polanco con vistas de 360°. Diseño de interiores premium, domótica integral y acceso a club privado en azotea.",
-    amenities: [
-      { icon: "apartment", label: "Vista 360°" },
-      { icon: "elevator", label: "Elevador privado" },
-      { icon: "wine_bar", label: "Sky lounge" },
-    ],
+    // legacy-compatible aliases
+    priceMXN: 2_450_000,
+    fraction: "1 / 14",
+    weeksPerYear: 3,
+    yieldPct: 9.4,
+    rating: 5.0,
+    reviews: 0,
+    category: "Disponible",
   },
   {
-    id: "jungle-lodge",
-    name: "Jungle Lodge",
-    location: "Riviera Maya, Quintana Roo",
-    city: "Riviera Maya",
-    image: img("photo-1571003123894-1f0594d2b5d9"),
-    gallery: [img("photo-1571003123894-1f0594d2b5d9")],
-    priceMXN: 920000,
-    fraction: "1/10",
-    weeksPerYear: 5,
-    yieldPct: 8.8,
-    rating: 4.7,
-    reviews: 19,
-    category: "Wellness",
-    featured: true,
+    id: "proximamente-cancun",
+    name: "Próximamente — Cancún",
+    tagline: "fractional living · by V·Living",
+    location: "Cancún, Quintana Roo",
+    city: "Cancún",
+    state: "Quintana Roo",
+    status: "Próximamente",
+    delivery: "Por anunciar",
+    kind: "Edificio boutique de autor",
+    totalFractions: 14,
+    weeksPerFraction: 3,
+    image: render("proximamente-cancun", "01"),
+    gallery: [render("proximamente-cancun", "01")],
+    priceFromMXN: 0,
     description:
-      "Arquitectura inmersa en selva con cenote privado y piscinas naturales. Lujo sostenible con materiales locales y luz cálida que invita al descanso.",
+      "Nuestro próximo desarrollo boutique en Cancún, Quintana Roo. Mismo modelo V·Living: 14 fracciones, 3 semanas al año por fracción, gestión de punta a punta (V·Billing) y respaldo de Fideicomiso Bancario. Déjanos tus datos por WhatsApp para ser de los primeros en conocer precios y disponibilidad.",
     amenities: [
-      { icon: "water", label: "Cenote privado" },
-      { icon: "spa", label: "Spa en selva" },
-      { icon: "eco", label: "Eco-lujo" },
+      { icon: "directions_car", label: "Traslado aeropuerto" },
+      { icon: "cleaning_services", label: "Mucama · limpieza diaria" },
+      { icon: "concierge", label: "Concierge premium" },
     ],
+    priceMXN: 0,
+    fraction: "1 / 14",
+    weeksPerYear: 3,
+    yieldPct: 0,
+    rating: 0,
+    reviews: 0,
+    category: "Próximamente",
+  },
+  {
+    id: "proximamente-playa-del-carmen",
+    name: "Próximamente — Playa del Carmen",
+    tagline: "fractional living · by V·Living",
+    location: "Playa del Carmen, Quintana Roo",
+    city: "Playa del Carmen",
+    state: "Quintana Roo",
+    status: "Próximamente",
+    delivery: "Por anunciar",
+    kind: "Edificio boutique de autor",
+    totalFractions: 14,
+    weeksPerFraction: 3,
+    image: render("proximamente-playa-del-carmen", "01"),
+    gallery: [render("proximamente-playa-del-carmen", "01")],
+    priceFromMXN: 0,
+    description:
+      "Un nuevo edificio boutique de autor en Playa del Carmen, Quintana Roo. Mismo modelo V·Living: 14 fracciones, 3 semanas al año por fracción, servicios premium incluidos y operación llave en mano bajo Fideicomiso Bancario. Escríbenos por WhatsApp para recibir el dossier en cuanto esté disponible.",
+    amenities: [
+      { icon: "restaurant", label: "−30% en restaurantes" },
+      { icon: "sailing", label: "Yates · tours" },
+      { icon: "concierge", label: "Concierge premium" },
+    ],
+    priceMXN: 0,
+    fraction: "1 / 14",
+    weeksPerYear: 3,
+    yieldPct: 0,
+    rating: 0,
+    reviews: 0,
+    category: "Próximamente",
   },
 ];
 
+// ---- Experiences (V·Experiences — Riviera Maya context) ----
 export const experiences: Experience[] = [
   {
-    id: "yate-los-cabos",
-    title: "Yate privado en Los Cabos",
+    id: "yate-privado",
+    title: "Yate privado en el Caribe",
     category: "Navegación",
     duration: "4 horas de navegación",
     priceMXN: 18000,
@@ -176,35 +141,8 @@ export const experiences: Experience[] = [
     exclusive: true,
   },
   {
-    id: "chef-privado",
-    title: "Chef privado en tu villa",
-    category: "Gastronomía",
-    duration: "Cena de 5 tiempos",
-    priceMXN: 3500,
-    image: img("photo-1556910103-1c02745aae4d"),
-    icon: "restaurant",
-  },
-  {
-    id: "helicoptero",
-    title: "Tour en helicóptero",
-    category: "Aventura",
-    duration: "45 minutos de vuelo",
-    priceMXN: 12500,
-    image: img("photo-1473862170180-84427c485a02"),
-    icon: "flight",
-  },
-  {
-    id: "spa-villa",
-    title: "Masajes en tu villa",
-    category: "Bienestar",
-    duration: "90 minutos",
-    priceMXN: 4200,
-    image: img("photo-1540555700478-4be289fbecef"),
-    icon: "spa",
-  },
-  {
-    id: "buceo-cenote",
-    title: "Buceo en cenote privado",
+    id: "cenote-privado",
+    title: "Cenote privado en la selva",
     category: "Aventura",
     duration: "3 horas",
     priceMXN: 6800,
@@ -213,89 +151,118 @@ export const experiences: Experience[] = [
     exclusive: true,
   },
   {
-    id: "cata-vinos",
-    title: "Cata de vinos premium",
+    id: "chef-privado",
+    title: "Chef privado en tu residencia",
     category: "Gastronomía",
-    duration: "2 horas",
+    duration: "Cena de 5 tiempos",
+    priceMXN: 3500,
+    image: img("photo-1556910103-1c02745aae4d"),
+    icon: "restaurant",
+  },
+  {
+    id: "spa-en-residencia",
+    title: "Spa & masajes en tu residencia",
+    category: "Bienestar",
+    duration: "90 minutos",
+    priceMXN: 4200,
+    image: img("photo-1540555700478-4be289fbecef"),
+    icon: "spa",
+  },
+  {
+    id: "tour-tulum",
+    title: "Tour ruinas & beach club, Tulum",
+    category: "Aventura",
+    duration: "Día completo",
+    priceMXN: 5200,
+    image: img("photo-1518105779142-d975f22f1b0a"),
+    icon: "tour",
+  },
+  {
+    id: "vida-nocturna",
+    title: "Vida nocturna VIP",
+    category: "Gastronomía",
+    duration: "Noche",
     priceMXN: 5500,
-    image: img("photo-1510812431401-41d2bd2722f3"),
-    icon: "wine_bar",
+    image: img("photo-1514525253161-7a46d19cd819"),
+    icon: "nightlife",
   },
 ];
 
+// ---- Included services in every fraction (deck slide 4) ----
 export const services: PremiumService[] = [
   {
-    id: "concierge",
-    name: "Conserjería 24/7",
-    category: "Lifestyle",
-    description: "Asistencia personal ilimitada para reservaciones, traslados y solicitudes especiales.",
-    icon: "concierge",
-    approved: true,
-  },
-  {
-    id: "transporte",
-    name: "Traslados privados",
-    category: "Movilidad",
-    description: "Flota premium con chofer, transferencias aeropuerto y vehículos de lujo.",
+    id: "movilidad",
+    name: "Movilidad",
+    category: "Incluido en tu fracción",
+    description:
+      "Traslado desde el aeropuerto y choferes a tu disposición (2 camionetas).",
     icon: "directions_car",
     approved: true,
   },
   {
-    id: "jet-privado",
-    name: "Jet privado",
-    category: "Aviación",
-    description: "Vuelos charter bajo demanda a cualquier destino con coordinación integral.",
-    icon: "flight_takeoff",
-    approved: true,
-  },
-  {
-    id: "seguridad",
-    name: "Seguridad personal",
-    category: "Protección",
-    description: "Escolta y protección ejecutiva discreta durante tu estancia.",
-    icon: "security",
-    approved: true,
-  },
-  {
-    id: "limpieza",
-    name: "Housekeeping premium",
-    category: "Hogar",
-    description: "Servicio de limpieza, lavandería y mantenimiento diario de la propiedad.",
+    id: "hoteleria",
+    name: "Hotelería",
+    category: "Incluido en tu fracción",
+    description: "Mucama y limpieza diaria durante toda tu estancia.",
     icon: "cleaning_services",
     approved: true,
   },
   {
-    id: "eventos",
-    name: "Organización de eventos",
-    category: "Lifestyle",
-    description: "Producción de eventos privados, cenas y celebraciones a medida.",
-    icon: "celebration",
-    approved: false,
+    id: "gastronomia",
+    name: "Gastronomía",
+    category: "Incluido en tu fracción",
+    description: "Hasta −30% en restaurantes seleccionados de la Riviera Maya.",
+    icon: "restaurant",
+    approved: true,
+  },
+  {
+    id: "experiencias",
+    name: "Experiencias",
+    category: "Incluido en tu fracción",
+    description: "Yates, tours y vida nocturna curados por V·Experiences.",
+    icon: "sailing",
+    approved: true,
+  },
+  {
+    id: "atencion-premium",
+    name: "Atención premium",
+    category: "Incluido en tu fracción",
+    description: "Mesero, mucama y concierge dedicados a tu visita.",
+    icon: "concierge",
+    approved: true,
+  },
+  {
+    id: "descuentos-vexperiences",
+    name: "Descuentos V·Experiences",
+    category: "Incluido en tu fracción",
+    description: "Yates · restaurantes · autos · vida nocturna a precio preferente.",
+    icon: "local_offer",
+    approved: true,
   },
 ];
 
 export const documents: DocumentItem[] = [
-  { id: "d1", name: "Contrato de Fideicomiso", type: "PDF", size: "2.4 MB", icon: "description", status: "Firmado" },
-  { id: "d2", name: "Certificado de Propiedad", type: "PDF", size: "1.1 MB", icon: "verified_user", status: "Firmado" },
-  { id: "d3", name: "Reglamento de Uso", type: "PDF", size: "860 KB", icon: "gavel", status: "En revisión" },
-  { id: "d4", name: "Acuerdo de Mantenimiento", type: "PDF", size: "1.4 MB", icon: "build", status: "Pendiente" },
+  { id: "d1", name: "Contrato de Fideicomiso Bancario", type: "PDF", size: "2.4 MB", icon: "account_balance", status: "Firmado" },
+  { id: "d2", name: "Certificado de Fracción (1 / 14)", type: "PDF", size: "1.1 MB", icon: "verified_user", status: "Firmado" },
+  { id: "d3", name: "Reglamento de uso · 3 semanas/año", type: "PDF", size: "860 KB", icon: "gavel", status: "En revisión" },
+  { id: "d4", name: "Acuerdo V·Billing (operación llave en mano)", type: "PDF", size: "1.4 MB", icon: "build", status: "Pendiente" },
 ];
 
 export const stays: Stay[] = [
   {
     id: "s1",
-    propertyName: "Casa del Mar",
-    location: "Los Cabos, BCS",
-    image: img("photo-1613490493576-7fde63acd811"),
+    propertyName: "ATTIK — Semana premium",
+    location: "Tulum, Quintana Roo",
+    image: img("photo-1582268611958-ebfd161ef9cf"),
     checkIn: "20 May 2026",
     checkOut: "27 May 2026",
     status: "Confirmada",
   },
   {
     id: "s2",
-    propertyName: "Villa Paraíso",
+    propertyName: "ATTIK — Semana intermedia",
     location: "Tulum, Quintana Roo",
-    image: img("photo-1582268611958-ebfd161ef9cf"),
+    image: img("photo-1505691938895-1758d7feb511"),
     checkIn: "14 Jul 2026",
     checkOut: "21 Jul 2026",
     status: "Pendiente",
@@ -303,10 +270,10 @@ export const stays: Stay[] = [
 ];
 
 export const payments: Payment[] = [
-  { id: "p1", concept: "Adquisición fracción 1/8 — Casa del Mar", date: "12 Mar 2026", amountMXN: 1250000, method: "Transferencia", status: "Pagado" },
-  { id: "p2", concept: "Mantenimiento anual 2026", date: "01 Ene 2026", amountMXN: 48000, method: "Mercado Pago", status: "Pagado" },
+  { id: "p1", concept: "Adquisición fracción 1/14 — ATTIK, Tulum", date: "12 Mar 2026", amountMXN: 2450000, method: "Transferencia", status: "Pagado" },
+  { id: "p2", concept: "Cuota V·Billing anual 2026", date: "01 Ene 2026", amountMXN: 48000, method: "Mercado Pago", status: "Pagado" },
   { id: "p3", concept: "Experiencia — Yate privado", date: "18 May 2026", amountMXN: 18000, method: "Stripe", status: "Procesando" },
-  { id: "p4", concept: "Mantenimiento Q3 2026", date: "01 Jul 2026", amountMXN: 12000, method: "Mercado Pago", status: "Pendiente" },
+  { id: "p4", concept: "Cuota de operación Q3 2026", date: "01 Jul 2026", amountMXN: 12000, method: "Mercado Pago", status: "Pendiente" },
 ];
 
 export const formatMXN = (n: number) =>
@@ -314,18 +281,17 @@ export const formatMXN = (n: number) =>
 
 export const getProperty = (id: string) => properties.find((p) => p.id === id);
 
-// Computed marketplace stats (used on the landing social-proof band).
+// Computed marketplace stats for the social-proof band.
 export const stats = {
-  properties: properties.length,
+  developments: properties.length,
   cities: new Set(properties.map((p) => p.city)).size,
-  avgYield: Number(
-    (properties.reduce((s, p) => s + p.yieldPct, 0) / properties.length).toFixed(1)
-  ),
-  members: 128,
+  fractions: 14,
+  weeks: 3,
+  years: 10,
 };
 
-// Featured selection for the hero carousel (fallback to first 3).
+// Featured selection (ATTIK first).
 export const featuredProperties = (() => {
   const f = properties.filter((p) => p.featured);
-  return f.length >= 3 ? f : properties.slice(0, 3);
+  return f.length ? f : properties.slice(0, 1);
 })();

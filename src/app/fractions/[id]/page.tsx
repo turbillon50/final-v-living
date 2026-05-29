@@ -9,10 +9,10 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { id: string } }): Metadata {
   const property = getProperty(params.id);
-  if (!property) return { title: "Propiedad no encontrada" };
+  if (!property) return { title: "Desarrollo no encontrado" };
   return {
-    title: property.name,
-    description: property.description.slice(0, 150),
+    title: `${property.name} — ${property.city}`,
+    description: property.description.slice(0, 155),
     openGraph: { images: [property.image] },
   };
 }
