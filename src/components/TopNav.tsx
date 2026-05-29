@@ -3,20 +3,23 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Icon } from "./Icon";
-
-const links = [
-  { href: "/", label: "Explorar" },
-  { href: "/fractions", label: "Fracciones" },
-  { href: "/stays", label: "Estancias" },
-  { href: "/experiences", label: "Experiencias" },
-  { href: "/services", label: "Servicios" },
-];
+import { ThemeToggle, LangToggle } from "./ThemeLangToggle";
+import { useT } from "@/lib/i18n";
 
 export function TopNav() {
   const pathname = usePathname();
+  const { t } = useT();
+
+  const links = [
+    { href: "/", label: t("nav.explore") },
+    { href: "/fractions", label: t("nav.fractions") },
+    { href: "/stays", label: t("nav.stays") },
+    { href: "/experiences", label: t("nav.experiences") },
+    { href: "/services", label: t("nav.services") },
+  ];
 
   return (
-    <header className="bg-background/80 backdrop-blur-xl border-b border-white/10 sticky top-0 z-50 w-full">
+    <header className="bg-background/80 backdrop-blur-xl border-b border-border sticky top-0 z-50 w-full">
       <div className="h-16 w-full max-w-7xl mx-auto flex justify-between items-center px-margin-mobile">
         <div className="flex items-center gap-4">
           <Link href="/" className="flex items-center gap-2">
@@ -33,7 +36,7 @@ export function TopNav() {
                 key={l.href}
                 href={l.href}
                 className={`font-label-md transition-opacity hover:opacity-80 ${
-                  active ? "text-primary-fixed cyan-text-glow" : "text-secondary"
+                  active ? "text-accent cyan-text-glow" : "text-on-surface-variant"
                 }`}
               >
                 {l.label}
@@ -41,23 +44,28 @@ export function TopNav() {
             );
           })}
         </nav>
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <ThemeToggle />
+          <LangToggle />
           <Link
             href="/owner"
-            className="hidden sm:flex items-center gap-2 text-secondary hover:text-primary transition-colors font-label-md"
+            className="hidden sm:flex items-center gap-2 text-on-surface-variant hover:text-ink transition-colors font-label-md"
           >
             <Icon name="dashboard" className="text-[20px]" />
-            <span className="hidden lg:inline">Portal</span>
+            <span className="hidden lg:inline">{t("nav.portal")}</span>
           </Link>
-          <button aria-label="Notificaciones" className="text-primary hover:opacity-80 transition-opacity active:scale-90">
+          <button
+            aria-label={t("nav.notifications")}
+            className="hidden sm:flex h-9 w-9 items-center justify-center text-ink hover:opacity-80 transition-opacity active:scale-90"
+          >
             <Icon name="notifications" />
           </button>
           <Link
             href="/profile"
-            aria-label="Perfil"
-            className="h-9 w-9 rounded-full ring-2 ring-primary-container/30 overflow-hidden bg-surface-container-high flex items-center justify-center"
+            aria-label={t("nav.profile")}
+            className="h-9 w-9 rounded-full ring-2 ring-accent/30 overflow-hidden bg-surface-container-high flex items-center justify-center"
           >
-            <Icon name="person" className="text-primary-fixed text-[20px]" filled />
+            <Icon name="person" className="text-accent text-[20px]" filled />
           </Link>
         </div>
       </div>

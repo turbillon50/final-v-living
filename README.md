@@ -4,7 +4,7 @@
 
 PWA premium para propiedad fraccional, estancias, experiencias, servicios aprobados y gestión documental. Diseño _Obsidian Luxury_ (negro obsidiana, acento cyan/Caribbean blue, glassmorphism, microinteracciones) inspirado en Apple, Aman, Four Seasons, Pacaso y Tesla.
 
-Construido con **Next.js 14 (App Router) + TypeScript + Tailwind CSS**.
+Construido con **Next.js 14 (App Router) + TypeScript + Tailwind CSS**, con tema día/noche (`next-themes`) e i18n Español/Inglés.
 
 ---
 
@@ -65,6 +65,23 @@ Home/Explore · Marketplace fraccional · Detalle de propiedad · Estancias · E
 - Glassmorphism, tarjetas flotantes, reflejos sutiles, glow cyan.
 - Estados de **loading**, **empty** y **error** incluidos.
 - Tokens de color/tipografía portados desde `docs/stitch-reference/.../DESIGN.md`.
+
+### 🌗 Tema Día/Noche (light + dark)
+- Implementado con **[`next-themes`](https://github.com/pacocoursey/next-themes)** (`attribute="class"`, `defaultTheme="dark"`, sin transición al cambiar).
+- Sistema de color basado en **variables CSS semánticas** (`--background`, `--surface`, `--ink`, `--accent`, `--border`, etc.) definidas en `src/app/globals.css` bajo `:root` (día "Platinum") y `.dark` (noche "Obsidian"), mapeadas a tokens de Tailwind en `tailwind.config.ts`.
+- Ambos temas cumplen contraste AA. El acento cyan se ajusta (`#06b6b6` en claro, `#00fbfb` en oscuro).
+- Toggle de tema (sol/luna) en la **TopNav**, el **footer** y el **perfil**.
+
+### 🌐 Internacionalización (Español + Inglés)
+- i18n ligero propio en `src/lib/i18n.tsx`: `I18nProvider` (Context + `localStorage`, default `es`, sin FOUC) y hook `useT()` → `{ t, locale, setLocale }`.
+- Diccionario plano con claves punteadas (`home.hero.slide1.title`, …). Todas las cadenas visibles están traducidas.
+- Toggle de idioma (ES/EN) junto al de tema.
+
+### Componentes reutilizables
+- **`SmartImage`** — imagen con skeleton degradado al cargar y placeholder de marca ante errores (nunca íconos rotos).
+- **`Carousel`** — carrusel premium con scroll-snap, flechas, drag/touch, dots y autoplay opcional (usado en hero, destinos, propiedades y experiencias).
+- **`charts/`** — `AreaChart`, `DonutChart`, `BarChart`, `Sparkline` en SVG puro (sin dependencias) para el dashboard del owner.
+- **`CountUp`** — animación count-up de KPIs.
 
 ### PWA
 - `public/manifest.webmanifest` (instalable, standalone, theme obsidiana).
