@@ -22,10 +22,10 @@ export function FilterChips({
               setActive(opt);
               onChange?.(opt);
             }}
-            className={`px-6 py-2 rounded-full font-label-md text-label-md transition-all ${
+            className={`px-6 py-2 min-h-[44px] rounded-full font-label-md text-label-md transition-all ${
               isActive
-                ? "bg-primary-fixed text-on-primary-fixed cyan-glow"
-                : "border border-white/10 text-secondary hover:border-primary-fixed"
+                ? "bg-accent text-on-primary cyan-glow"
+                : "border border-border text-on-surface-variant hover:border-accent"
             }`}
           >
             {opt}

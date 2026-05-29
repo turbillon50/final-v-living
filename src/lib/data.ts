@@ -130,6 +130,7 @@ export const properties: Property[] = [
     rating: 4.8,
     reviews: 24,
     category: "Ciudad",
+    featured: true,
     description:
       "Penthouse en el corazón de Polanco con vistas de 360°. Diseño de interiores premium, domótica integral y acceso a club privado en azotea.",
     amenities: [
@@ -152,6 +153,7 @@ export const properties: Property[] = [
     rating: 4.7,
     reviews: 19,
     category: "Wellness",
+    featured: true,
     description:
       "Arquitectura inmersa en selva con cenote privado y piscinas naturales. Lujo sostenible con materiales locales y luz cálida que invita al descanso.",
     amenities: [
@@ -311,3 +313,19 @@ export const formatMXN = (n: number) =>
   new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 }).format(n);
 
 export const getProperty = (id: string) => properties.find((p) => p.id === id);
+
+// Computed marketplace stats (used on the landing social-proof band).
+export const stats = {
+  properties: properties.length,
+  cities: new Set(properties.map((p) => p.city)).size,
+  avgYield: Number(
+    (properties.reduce((s, p) => s + p.yieldPct, 0) / properties.length).toFixed(1)
+  ),
+  members: 128,
+};
+
+// Featured selection for the hero carousel (fallback to first 3).
+export const featuredProperties = (() => {
+  const f = properties.filter((p) => p.featured);
+  return f.length >= 3 ? f : properties.slice(0, 3);
+})();

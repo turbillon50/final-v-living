@@ -3,7 +3,9 @@ import { Hanken_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import { TopNav } from "@/components/TopNav";
 import { BottomNav } from "@/components/BottomNav";
+import { Footer } from "@/components/Footer";
 import { ServiceWorker } from "@/components/ServiceWorker";
+import { Providers } from "@/components/Providers";
 
 const hanken = Hanken_Grotesk({
   subsets: ["latin"],
@@ -76,18 +78,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={`dark ${hanken.variable} ${inter.variable}`}>
+    <html
+      lang="es"
+      suppressHydrationWarning
+      className={`${hanken.variable} ${inter.variable}`}
+    >
       <head>
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
         />
       </head>
-      <body className="font-body-md text-body-md overflow-x-hidden min-h-dvh">
-        <TopNav />
-        <div className="min-h-dvh">{children}</div>
-        <BottomNav />
-        <ServiceWorker />
+      <body className="font-body-md text-body-md overflow-x-hidden min-h-dvh flex flex-col">
+        <Providers>
+          <TopNav />
+          <div className="flex-1">{children}</div>
+          <Footer />
+          <div className="h-20 md:hidden" aria-hidden />
+          <BottomNav />
+          <ServiceWorker />
+        </Providers>
       </body>
     </html>
   );

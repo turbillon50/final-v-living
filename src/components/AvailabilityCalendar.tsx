@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useT } from "@/lib/i18n";
 
 // May 2026 starts on a Friday. Lightweight interactive range picker for the demo.
 const DAYS = ["DOM", "LUN", "MAR", "MIE", "JUE", "VIE", "SAB"];
@@ -9,6 +10,7 @@ const DAYS_IN_MONTH = 31;
 const BOOKED = new Set([8, 9, 10, 28, 29]); // unavailable demo days
 
 export function AvailabilityCalendar() {
+  const { t } = useT();
   const [range, setRange] = useState<{ start: number | null; end: number | null }>({
     start: 20,
     end: 25,
@@ -60,10 +62,10 @@ export function AvailabilityCalendar() {
               onClick={() => handleClick(day)}
               className={[
                 "h-10 flex items-center justify-center rounded-lg text-sm transition-colors",
-                booked ? "text-secondary/20 line-through cursor-not-allowed" : "text-secondary hover:bg-white/5",
-                within && !isStart && !isEnd ? "bg-primary-container/60 text-on-primary-fixed" : "",
-                isStart ? "bg-primary-container text-on-primary-fixed font-bold rounded-l-full" : "",
-                isEnd ? "bg-primary-container text-on-primary-fixed font-bold rounded-r-full" : "",
+                booked ? "text-on-surface-variant/30 line-through cursor-not-allowed" : "text-on-surface hover:fill-subtle",
+                within && !isStart && !isEnd ? "bg-accent/30 text-ink" : "",
+                isStart ? "bg-accent text-on-primary font-bold rounded-l-full" : "",
+                isEnd ? "bg-accent text-on-primary font-bold rounded-r-full" : "",
                 isStart && range.end === null ? "rounded-full" : "",
               ].join(" ")}
             >
@@ -72,16 +74,16 @@ export function AvailabilityCalendar() {
           );
         })}
       </div>
-      <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-white/5">
-        <Field label="Check-in" value={fmt(range.start)} />
-        <Field label="Check-out" value={fmt(range.end)} />
-        <Field label="Huéspedes" value="6 Personas" />
+      <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-border">
+        <Field label={t("cal.checkIn")} value={fmt(range.start)} />
+        <Field label={t("cal.checkOut")} value={fmt(range.end)} />
+        <Field label={t("cal.guests")} value={t("cal.guestsValue")} />
         <div className="flex items-center md:justify-end">
           <button
             onClick={() => setRange({ start: null, end: null })}
-            className="h-10 px-6 bg-white/5 hover:bg-white/10 rounded-full font-label-sm text-label-sm transition-colors"
+            className="h-11 px-6 fill-subtle hover:fill-subtle-2 rounded-full font-label-sm text-label-sm transition-colors text-ink"
           >
-            Reiniciar
+            {t("cal.reset")}
           </button>
         </div>
       </div>
